@@ -1,0 +1,536 @@
+/* Psicopompo — estética nocturna, tomada literalmente de la polilla real
+   (relieve escultórico sobre pared violeta, con lunas de piedra clara). */
+
+:root {
+  --hueso: #E9DFC8;
+  --hueso-dim: #cfc4a8;
+  --tinta: #241627;
+  --noche: #170e1c;
+  --noche-2: #2c1c31;
+  --verdin: #4F9B89;
+  --verdin-glow: #6fc4ac;
+  --cobre: #A64F35;
+  --cobre-glow: #d97a52;
+  --oro: #C49A45;
+  --oro-glow: #e6c168;
+
+  --bg: var(--noche);
+  --fg: var(--hueso);
+  --fg-soft: #c8bd9f;
+  --border: rgba(233, 223, 200, 0.14);
+
+  --serif: "Fraunces", "Cormorant Garamond", serif;
+  --sans: "Manrope", "Inter", sans-serif;
+
+  --maxw: 880px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* textura de pared muy sutil, solo como profundidad de fondo — nunca debe competir con el texto */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("/assets/textura-noche.jpg") center/cover fixed;
+  opacity: 0.16;
+  mix-blend-mode: soft-light;
+}
+
+/* grano / textura de revoque, sutil, sobre todo el sitio */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+a { color: inherit; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oro-glow);
+  margin-bottom: 0.9rem;
+}
+.eyebrow .chapter-no {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid var(--oro);
+  color: var(--oro-glow);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.6em;
+  color: var(--hueso);
+}
+h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); }
+h2 { font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 600; }
+h3 { font-size: 1.1rem; font-weight: 600; color: var(--hueso); }
+
+p { margin: 0 0 1.1em; color: var(--fg-soft); }
+b { color: var(--hueso); }
+i { color: var(--hueso-dim); }
+
+.standfirst {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: var(--hueso-dim);
+  max-width: 62ch;
+}
+
+/* ============ Nav superior ============ */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(23, 14, 28, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(196, 154, 69, 0.22);
+}
+
+.site-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.site-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--hueso);
+  text-decoration: none;
+}
+.site-nav-brand img { width: 26px; height: auto; opacity: 0.9; }
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+.site-nav-links a {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--fg-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.site-nav-links a:hover { color: var(--oro-glow); }
+
+@media (max-width: 560px) {
+  .site-nav-inner { flex-direction: column; gap: 0.6rem; padding: 0.7rem 1rem; }
+  .site-nav-links { gap: 1rem; justify-content: center; }
+}
+
+/* ============ HERO / cabecera con la foto real de la polilla ============ */
+
+.site-header {
+  position: relative;
+  overflow: hidden;
+  background: url("/assets/textura-noche.jpg") center/cover;
+}
+
+.brand-mark {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.4rem;
+  z-index: 3;
+  width: 44px;
+  height: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
+}
+
+.hero-photo-wrap {
+  position: relative;
+  height: min(56vh, 460px);
+  min-height: 300px;
+  overflow: hidden;
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: auto;
+  height: 92%;
+  max-width: 92%;
+  object-fit: contain;
+  will-change: transform;
+}
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(23,14,28,0.05) 0%, rgba(23,14,28,0.35) 55%, var(--noche) 100%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2.6rem 0 3rem;
+  margin-top: -3.2rem;
+}
+
+.hero-copy h1 {
+  text-shadow: 0 2px 24px rgba(0,0,0,0.5);
+}
+
+.footer-logo {
+  width: 64px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+  opacity: 0.8;
+}
+
+.audience-picker {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 2.2rem 0 0;
+  flex-wrap: wrap;
+}
+.audience-btn {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--oro);
+  background: rgba(196, 154, 69, 0.08);
+  color: var(--hueso);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.audience-btn:hover { transform: translateY(-1px); }
+.audience-btn[aria-pressed="true"] {
+  background: var(--oro);
+  color: var(--noche);
+  box-shadow: 0 0 24px rgba(196, 154, 69, 0.35);
+}
+.audience-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--fg-soft);
+  margin: 0.9rem 0 0;
+  opacity: 0.85;
+}
+
+/* ============ Capítulos (secciones del descenso) ============ */
+
+.chapter {
+  position: relative;
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* Cada capítulo tiene su propio color de profundidad, como luz distinta a medida que se baja */
+.chapter.c-umbral   { background: radial-gradient(ellipse at 50% 0%, rgba(166,79,53,0.14) 0%, transparent 60%); }
+.chapter.c-escalera {
+  background:
+    linear-gradient(rgba(23,14,28,0.82), rgba(23,14,28,0.88)),
+    url("/assets/textura-noche.jpg") center/cover;
+}
+.chapter.c-guardian  { background: radial-gradient(ellipse at 50% 30%, rgba(196,154,69,0.16) 0%, transparent 65%); }
+.chapter.c-libre {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(23,14,28,0.4) 0%, rgba(23,14,28,0.86) 70%),
+    url("/assets/patron-nervaduras.jpg") center/420px;
+}
+.chapter.c-regreso   { background: radial-gradient(ellipse at 50% 100%, rgba(233,223,200,0.08) 0%, transparent 60%); }
+.chapter.c-craft     { background: var(--noche-2); }
+
+.chapter-eye {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.55;
+  box-shadow: 0 0 0 2px rgba(196,154,69,0.35), 0 0 18px rgba(196,154,69,0.25);
+}
+
+.note {
+  border-left: 3px solid var(--oro);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  margin: 1.6rem 0;
+  font-style: italic;
+  color: var(--fg-soft);
+}
+
+.quote {
+  border-left: 3px solid var(--cobre-glow);
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  margin: 1.6rem 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--hueso);
+}
+.quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--fg-soft);
+  letter-spacing: 0.02em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 1.4rem 0;
+}
+.card {
+  position: relative;
+  background: rgba(233, 223, 200, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/patron-nervaduras.jpg") center/280px repeat;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.card > * { position: relative; }
+.card h3 { margin-bottom: 0.4rem; }
+.card p { margin-bottom: 0; font-size: 0.94rem; }
+
+.door-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin: 2rem 0 1rem;
+}
+.door-card {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  padding: 1.8rem 1.6rem;
+  border-radius: 16px;
+  border: 1px solid rgba(196, 154, 69, 0.35);
+  background: linear-gradient(160deg, rgba(196,154,69,0.08), rgba(23,14,28,0.4));
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.door-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--oro);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 30px rgba(196,154,69,0.15);
+}
+.door-card .eyebrow { margin-bottom: 0.5rem; }
+.door-card h3 { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.door-card p { font-size: 0.92rem; margin-bottom: 0.8rem; }
+.door-card .door-cta {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--oro-glow);
+}
+
+.badge-row {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin: 1.2rem 0 1.6rem; padding: 0; list-style: none;
+}
+.badge-row li {
+  font-family: monospace, var(--sans);
+  font-size: 0.74rem; padding: 0.3rem 0.65rem; border-radius: 6px;
+  background: rgba(233,223,200,0.06); border: 1px solid var(--border);
+  color: var(--fg-soft);
+}
+
+.link-row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin: 1rem 0 1.6rem; }
+.link-row a { font-size: 0.88rem; color: var(--verdin-glow); text-decoration: underline; }
+
+.phone-cta {
+  display: inline-flex; align-items: baseline; gap: 0.5rem;
+  font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700; color: var(--hueso);
+  margin: 0.4rem 0 1.2rem;
+}
+.phone-cta a { color: var(--oro-glow); text-decoration: none; border-bottom: 2px solid rgba(196,154,69,0.4); }
+.phone-cta a:hover { border-color: var(--oro-glow); }
+
+.pill-list {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin: 1rem 0 1.6rem; padding: 0; list-style: none;
+}
+.pill-list li {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 0.35rem 0.8rem; border-radius: 999px;
+  background: rgba(196, 154, 69, 0.16);
+  border: 1px solid rgba(196, 154, 69, 0.3);
+  color: var(--oro-glow);
+}
+
+.lineage {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.5rem 0.7rem; margin: 1.6rem 0 2rem;
+  font-family: var(--sans); font-weight: 600; font-size: 0.9rem;
+}
+.lineage span {
+  padding: 0.4rem 0.85rem; border-radius: 999px;
+  background: rgba(233,223,200,0.06);
+  border: 1px solid var(--border);
+  color: var(--hueso-dim);
+}
+.lineage .arrow { background: none; border: none; color: var(--cobre-glow); padding: 0; font-weight: 400; }
+.lineage span.current {
+  background: var(--oro); color: var(--noche); border-color: var(--oro);
+  box-shadow: 0 0 20px rgba(196,154,69,0.3);
+}
+
+.gestural-divider {
+  display: block; width: min(280px, 55%); height: auto;
+  margin: 0 auto; opacity: 0.5;
+}
+
+.guardian-figure {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 154, 69, 0.4);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 50px rgba(196,154,69,0.22);
+}
+.guardian-figure-wrap {
+  margin: 1.6rem 0 2rem;
+  padding: 1.5rem;
+  background: rgba(23, 14, 28, 0.5);
+  border-radius: 20px;
+}
+.guardian-caption {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--fg-soft);
+  opacity: 0.75;
+  margin: 0.7rem 0 0;
+}
+
+.pull-gold {
+  text-align: center; font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  color: var(--oro-glow);
+  max-width: 46ch; margin: 2rem auto; position: relative;
+}
+.pull-gold::before, .pull-gold::after {
+  content: ""; display: block; width: 34px; height: 2px;
+  background: var(--oro); margin: 0.9rem auto; opacity: 0.7;
+}
+
+.tech-list { margin: 1.2rem 0 0.4rem; padding: 0; list-style: none; display: grid; gap: 0.6rem; }
+.tech-list li {
+  padding: 0.7rem 0.9rem; border-radius: 10px;
+  background: rgba(233,223,200,0.04);
+  border: 1px solid var(--border);
+  font-size: 0.9rem; color: var(--fg-soft);
+}
+
+.limits-box {
+  background: rgba(233,223,200,0.04);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--hueso-dim);
+  border-radius: 4px; padding: 1.1rem 1.3rem; margin: 1.4rem 0; font-size: 0.92rem;
+}
+
+.stat-row { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 1.6rem 0; text-align: center; justify-content: center; }
+.stat-row .stat b { display: block; font-family: var(--serif); font-size: 1.8rem; color: var(--cobre-glow); }
+.stat-row .stat span { display: block; font-size: 0.78rem; color: var(--fg-soft); letter-spacing: 0.02em; }
+
+/* ============ Selector de voz dentro de un capítulo ============ */
+
+.voice { display: none; }
+.voice.is-active { display: block; }
+.voice-tag {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--noche); background: var(--verdin-glow);
+  padding: 0.15rem 0.55rem; border-radius: 4px; margin-bottom: 0.6rem;
+}
+
+/* ============ CTA / footer ============ */
+
+.cta { text-align: center; padding: 3.5rem 0 4rem; }
+.btn {
+  display: inline-block; font-family: var(--sans); font-weight: 600; font-size: 0.95rem;
+  padding: 0.85rem 1.9rem; border-radius: 999px; text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--cobre); color: var(--hueso); box-shadow: 0 8px 28px rgba(166,79,53,0.35); }
+.btn-ghost { border: 1.5px solid var(--oro); color: var(--hueso); margin-left: 0.6rem; }
+
+.site-footer {
+  padding: 2.2rem 0 3rem; text-align: center; font-size: 0.8rem;
+  color: var(--fg-soft); border-top: 1px solid var(--border); background: var(--noche-2);
+}
+
+/* ============ Reveal on scroll ============ */
+.reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .hero-photo { transform: none !important; }
+}

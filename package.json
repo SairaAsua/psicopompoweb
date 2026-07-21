@@ -1,0 +1,26 @@
+{
+  "name": "psicopompo",
+  "version": "1.0.0",
+  "description": "Landing de Psicopompo — copiloto de IA para la Proyección del Mito Personal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site — no build step required'",
+    "start": "npx --yes serve -s . -l ${PORT:-8773}",
+    "dev": "python3 -m http.server 8773"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "keywords": [
+    "static",
+    "html",
+    "landing"
+  ],
+  "license": "UNLICENSED"
+}
