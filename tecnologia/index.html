@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Psicopompo — Tecnología</title>
+<meta name="description" content="Arquitectura, dataset y stack de Psicopompo: el espacio de trabajo con IA para la Proyección Armónica del Mito." />
+<link rel="icon" href="/assets/logo-psicopompo.png" type="image/png" />
+<meta property="og:title" content="Psicopompo — Tecnología" />
+<meta property="og:description" content="Cómo funciona el copiloto de IA para facilitadores de la Proyección del Mito Personal." />
+<meta property="og:image" content="/assets/mascota-guardian-ia.jpg" />
+<meta name="theme-color" content="#170e1c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/styles.css" />
+<style>
+  /* Tecnología — estilo más técnico, hermano de la landing, con la polilla de fondo y la sombra ayudando */
+  .tech-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 62vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 7rem 1.5rem 3.5rem;
+    background:
+      radial-gradient(ellipse at 70% 20%, rgba(79,155,137,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 30% 80%, rgba(196,154,69,0.14) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(23,14,28,0.55) 0%, var(--noche) 92%),
+      url("/assets/mascota-polilla-hero.jpg") center 38% / auto 110% no-repeat;
+  }
+  .tech-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(23,14,28,0.25) 0%, rgba(23,14,28,0.85) 70%, var(--noche) 100%);
+  }
+  .tech-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .tech-hero .eyebrow { color: var(--verdin-glow); }
+  .tech-hero h1 {
+    font-size: clamp(2rem, 5.5vw, 3.6rem);
+    max-width: 18ch;
+    margin-bottom: 0.6rem;
+  }
+  .tech-hero .lead {
+    font-size: 1.05rem;
+    color: var(--fg-soft);
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  .tech-section {
+    position: relative;
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .tech-section.alt { background: rgba(23,14,28,0.65); }
+  .tech-section h2 { max-width: 26ch; }
+  .tech-section .desc { max-width: 62ch; font-size: 1.05rem; }
+
+  .component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0 1rem;
+  }
+  .component-card {
+    position: relative;
+    background: rgba(233, 223, 200, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .component-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(196,154,69,0.45);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 30px rgba(196,154,69,0.12);
+  }
+  .component-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--accent, var(--verdin-glow));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 14px 14px 0 0;
+  }
+  .component-card:hover::before { transform: scaleX(1); }
+  .component-card .role {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent, var(--verdin-glow));
+    margin-bottom: 0.5rem;
+  }
+  .component-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  .component-card p { font-size: 0.92rem; margin: 0; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 1.5rem;
+  }
+  .stat-card {
+    text-align: center;
+    padding: 1.4rem 1rem;
+    background: rgba(233,223,200,0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .stat-card b {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--cobre-glow);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-card span {
+    font-size: 0.78rem;
+    color: var(--fg-soft);
+    line-height: 1.35;
+  }
+
+  .flow-list {
+    display: grid;
+    gap: 1rem;
+    margin: 1.6rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .flow-list li {
+    display: grid;
+    grid-template-columns: 2.2rem 1fr;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+    background: rgba(233,223,200,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .flow-list .no {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--oro-glow);
+    text-align: center;
+    line-height: 2.2rem;
+    width: 2.2rem; height: 2.2rem;
+    border-radius: 50%;
+    border: 1px solid var(--oro);
+    background: rgba(196,154,69,0.08);
+  }
+
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.6rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .feature-list li {
+    padding: 1.1rem 1.2rem;
+    border-left: 3px solid var(--verdin-glow);
+    background: rgba(79,155,137,0.06);
+    border-radius: 0 12px 12px 0;
+    font-size: 0.95rem;
+  }
+  .feature-list li strong { color: var(--hueso); }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--fg-soft);
+    text-decoration: none;
+    margin-bottom: 1.2rem;
+  }
+  .back-link:hover { color: var(--oro-glow); }
+
+  .tech-cta {
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(196,154,69,0.12) 0%, transparent 60%),
+      var(--noche-2);
+    border-top: 1px solid var(--border);
+  }
+  .tech-cta h2 { margin-bottom: 0.6rem; }
+  .tech-cta p { max-width: 56ch; margin: 0 auto 1.4rem; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--verdin);
+    color: var(--noche);
+    box-shadow: 0 8px 24px rgba(79,155,137,0.28);
+  }
+  .btn-primary:hover { box-shadow: 0 10px 30px rgba(79,155,137,0.4); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--hueso);
+    border: 1.5px solid var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--oro); color: var(--oro-glow); }
+
+  .stack-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.4rem 0 1rem;
+  }
+  .stack-tag {
+    font-family: monospace, var(--sans);
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    background: rgba(233,223,200,0.06);
+    border: 1px solid var(--border);
+    color: var(--fg-soft);
+  }
+
+  @media (max-width: 560px) {
+    .tech-hero { padding: 6rem 1.25rem 2.5rem; min-height: 55vh; }
+    .component-grid { grid-template-columns: 1fr; }
+  }
+
+  .gallery-plate {
+    margin: 2rem 0 0.6rem;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  }
+  .gallery-plate img { display: block; width: 100%; height: auto; }
+  .gallery-plate figcaption {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.76rem;
+    color: var(--fg-soft);
+    background: rgba(233,223,200,0.04);
+  }
+  .gallery-plate figcaption a {
+    color: var(--oro-glow);
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="site-nav-brand" href="/">
+      <img src="/assets/logo-psicopompo-hueso.png" alt="" aria-hidden="true" />
+      Psicopompo
+    </a>
+    <div class="site-nav-links">
+      <a href="/tecnologia/" style="color: var(--oro-glow);">Tecnología</a>
+      <a href="/#ecosistema">Harmonic Beacon</a>
+      <a href="/#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="tech-hero">
+  <div class="tech-hero-inner">
+    <a class="back-link reveal" href="/">← Volver a la landing</a>
+    <span class="eyebrow reveal">Puerta técnica</span>
+    <h1 class="reveal">Qué hay detrás del viaje</h1>
+    <p class="lead reveal">
+      Psicopompo es un espacio de trabajo con IA para facilitadores de la Proyección del Mito Personal.
+      No es un chatbot autónomo: es una arquitectura que separa lo determinista de lo contextual,
+      con una persona siempre en el circuito.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <!-- Ecosistema -->
+  <section class="tech-section">
+    <div class="wrap">
+      <span class="eyebrow reveal">Origen</span>
+      <h2 class="reveal">Una cadena de investigación</h2>
+      <p class="desc reveal">
+        Psicopompo nace dentro de AlterMundi, como capa digital de un ecosistema que ya existía:
+        teoría armónica, exploración computacional, un campo acústico y una práctica simbólica.
+      </p>
+      <div class="lineage reveal">
+        <span>AlterMundi</span><span class="arrow">→</span>
+        <span>HIT</span><span class="arrow">→</span>
+        <span>Phideus</span><span class="arrow">→</span>
+        <span>Harmonic Beacon</span><span class="arrow">→</span>
+        <span>PMP</span><span class="arrow">→</span>
+        <span class="current">Psicopompo</span>
+      </div>
+      <p class="note reveal">
+        Estas son proposiciones de investigación, no afirmaciones médicas ni de bienestar establecidas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Qué hace -->
+  <section class="tech-section alt">
+    <div class="wrap">
+      <span class="eyebrow reveal">Función</span>
+      <h2 class="reveal">Interfaces separadas, sincronizadas</h2>
+      <p class="desc reveal">
+        El facilitador y el participante comparten una sesión, pero cada uno ve lo que necesita.
+        El sistema atraviesa las fases del protocolo PMP y deja decisiones claras en manos humanas.
+      </p>
+      <ul class="feature-list reveal">
+        <li><strong>Facilitador:</strong> controla pausas, el estado del Beacon, el retorno y la apertura de un canal humano.</li>
+        <li><strong>Participante:</strong> escucha, habla, y puede pedir reformulaciones sin cambiar la política de la sesión.</li>
+        <li><strong>Salida:</strong> informe revisable para el facilitador y espejo simbólico en primera persona.</li>
+        <li><strong>Exportación:</strong> la sesión se guarda solo cuando el facilitador lo pide explícitamente.</li>
+      </ul>
+      <div class="voice" data-voice="participantes">
+        <span class="voice-tag">En criollo</span>
+        <p>
+          Vos cerrás los ojos, escuchás, respondés. Quien te acompaña mantiene el timón desde otra
+          pantalla. Nada se graba sin que alguien decida hacerlo.
+        </p>
+      </div>
+      <figure class="gallery-plate reveal">
+        <img src="/assets/devpost/02-human-channel.jpg" alt="El canal humano: mensajes del facilitador registrados en el log de sesión, pero excluidos de todo modelo." loading="lazy" />
+        <figcaption>Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Arquitectura -->
+  <section class="tech-section">
+    <div class="wrap">
+      <span class="eyebrow reveal">Arquitectura</span>
+      <h2 class="reveal">Una máquina de estados, no un chatbot</h2>
+      <p class="desc reveal">
+        La PMP mezcla pasajes fijos del protocolo con decisiones genuinamente contextuales. Psicopompo
+        separa esas dos escalas en lugar de pedirle todo a un solo modelo.
+      </p>
+      <div class="component-grid reveal">
+        <div class="component-card" style="--accent: var(--verdin-glow);">
+          <div class="role">Estructura</div>
+          <h3>Máquina de estados versionada</h3>
+          <p>Sostiene la columna vertebral del viaje: inducción, Hito A, descenso, Hito B, viaje libre, regreso y cierre.</p>
+        </div>
+        <div class="component-card" style="--accent: var(--oro-glow);">
+          <div class="role">Decisión</div>
+          <h3>LoRA de decisión</h3>
+          <p>Elige una de diez familias de intervención y la señal de turno: hablar, esperar o backchannel.</p>
+        </div>
+        <div class="component-card" style="--accent: var(--cobre-glow);">
+          <div class="role">Compuerta</div>
+          <h3>LoRA de compuerta</h3>
+          <p>Resuelve bifurcaciones acotadas en Hito A y Hito B, sin mezclarlas con el flujo libre.</p>
+        </div>
+        <div class="component-card" style="--accent: var(--verdin-glow);">
+          <div class="role">Lenguaje</div>
+          <h3>Gemma contextual</h3>
+          <p>Escribe la respuesta visible a partir de la política elegida, el historial y un precedente experto recuperado.</p>
+        </div>
+        <div class="component-card" style="--accent: var(--oro-glow);">
+          <div class="role">Render</div>
+          <h3>Renderizador determinista</h3>
+          <p>Responde superficies cerradas como backchannels y pasajes de protocolo, sin llamar al modelo.</p>
+        </div>
+        <div class="component-card" style="--accent: var(--cobre-glow);">
+          <div class="role">Guarda</div>
+          <h3>Runtime guard</h3>
+          <p>Revisa fugas de metadatos, bucles, precedentes copiados, señales incompatibles y giros dialectales.</p>
+        </div>
+        <div class="component-card" style="--accent: var(--verdin-glow);">
+          <div class="role">Override</div>
+          <h3>Intervención humana</h3>
+          <p>El facilitador puede pausar, controlar el Beacon, iniciar el retorno o abrir un canal humano sin avanzar la sesión.</p>
+        </div>
+      </div>
+      <p class="note reveal">
+        Los mensajes del canal humano se muestran y exportan literalmente, pero quedan afuera de Gemma,
+        Groq, los turnos y la expansión mítica.
+      </p>
+      <figure class="gallery-plate reveal">
+        <img src="/assets/devpost/04-complete-ai-ml-stack.jpg" alt="Mapa completo del stack de IA y ML de Psicopompo." loading="lazy" />
+        <figcaption>Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Dataset -->
+  <section class="tech-section alt">
+    <div class="wrap">
+      <span class="eyebrow reveal">Entrenamiento</span>
+      <h2 class="reveal">Curado a mano, con el creador del método</h2>
+      <p class="desc reveal">
+        Casi todo el trabajo pasó antes de que un modelo pudiera escribir una frase útil. Julián —
+        creador y practicante experto de la PMP — construyó y curó el material de origen.
+      </p>
+      <div class="stats-grid reveal">
+        <div class="stat-card"><b>107</b><span>semillas expertas anonimizadas</span></div>
+        <div class="stat-card"><b>20</b><span>decisiones de señal de turno</span></div>
+        <div class="stat-card"><b>13</b><span>comparaciones a ciegas</span></div>
+        <div class="stat-card"><b>26</b><span>pares de confundibilidad</span></div>
+        <div class="stat-card"><b>2</b><span>correcciones al protocolo</span></div>
+        <div class="stat-card"><b>15+</b><span>años de desarrollo del método</span></div>
+      </div>
+      <p class="reveal">
+        Los tres adaptadores (decisión, compuerta y ejecución) se entrenaron en casa con <b>QLoRA sobre
+        Gemma 4 E4B</b>, en una sola estación de trabajo — sin nube de entrenamiento alquilada. El
+        adaptador de ejecución quedó cargado pero inactivo en el perfil público: en casos frescos,
+        Gemma contextual sola respondía mejor.
+      </p>
+      <div class="stack-block reveal">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">WebSockets</span>
+        <span class="stack-tag">PyTorch</span>
+        <span class="stack-tag">PEFT / QLoRA</span>
+        <span class="stack-tag">Gemma 4 E4B</span>
+        <span class="stack-tag">Playwright</span>
+        <span class="stack-tag">Groq</span>
+      </div>
+      <div class="stat-row reveal">
+        <div class="stat"><b>257</b><span>tests automatizados</span></div>
+        <div class="stat"><b>18/18</b><span>transiciones de estado verificadas</span></div>
+      </div>
+      <figure class="gallery-plate reveal">
+        <img src="/assets/devpost/05-build-week-evidence.jpg" alt="Evidencia de Build Week: tests, benchmarks y manifiestos versionados." loading="lazy" />
+        <figcaption>Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Flujo de sesión -->
+  <section class="tech-section">
+    <div class="wrap">
+      <span class="eyebrow reveal">Sesión</span>
+      <h2 class="reveal">Fases del viaje</h2>
+      <p class="desc reveal">
+        El protocolo se divide en ocho fases. Las primeras son fijas; las del medio abren espacio para
+        decisiones contextuales; el final cierra y devuelve algo para llevarse.
+      </p>
+      <ol class="flow-list reveal">
+        <li><span class="no">1</span><div><strong>Inducción</strong> — el facilitador prepara el campo y el participante entra con un código efímero.</div></li>
+        <li><span class="no">2</span><div><strong>Hito A — El umbral</strong> — objeto de atención, lugar y la primera puerta.</div></li>
+        <li><span class="no">3</span><div><strong>Descenso</strong> — cuenta que baja, escalón a escalón, sostenida por transiciones deterministas.</div></li>
+        <li><span class="no">4</span><div><strong>Hito B — El Guardián</strong> — la psique le da forma a una figura en el fondo del mundo imaginal.</div></li>
+        <li><span class="no">5</span><div><strong>Viaje libre</strong> — el adaptador de decisión elige intervenciones y señales de turno turno a turno.</div></li>
+        <li><span class="no">6</span><div><strong>Retorno</strong> — el facilitador inicia el camino de vuelta cuando corresponde.</div></li>
+        <li><span class="no">7</span><div><strong>Reintegración sensorial</strong> — la persona vuelve al cuerpo y al espacio.</div></li>
+        <li><span class="no">8</span><div><strong>Cierre</strong> — un índice RAG local busca en dieciséis fuentes y Gemma produce el informe y el espejo.</div></li>
+      </ol>
+      <figure class="gallery-plate reveal">
+        <img src="/assets/devpost/01-live-journey.jpg" alt="El viaje en vivo: facilitador y participante recorriendo las fases del protocolo." loading="lazy" />
+        <figcaption>Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Post sesión -->
+  <section class="tech-section alt">
+    <div class="wrap">
+      <span class="eyebrow reveal">Salida</span>
+      <h2 class="reveal">Después de la sesión</h2>
+      <p class="desc reveal">
+        Un índice RAG privado y local recupera pasajes de una biblioteca simbólica de 16 fuentes. Con
+        eso, un modelo Gemma local genera dos documentos:
+      </p>
+      <div class="card-grid reveal">
+        <div class="card">
+          <h3>Informe para el facilitador</h3>
+          <p>Expansión mítica con fuentes, revisable antes de entregarla.</p>
+        </div>
+        <div class="card">
+          <h3>Espejo para el participante</h3>
+          <p>Un cierre simbólico en primera persona, como regalo de cierre.</p>
+        </div>
+      </div>
+      <p class="limits-box reveal">
+        <b>Límites:</b> la expansión mítica es una ayuda interpretativa en beta, no una lectura clínica
+        ni validada por expertos. Siempre necesita revisión humana.
+      </p>
+      <figure class="gallery-plate reveal">
+        <img src="/assets/devpost/03-myth-expansion.jpg" alt="Expansión mítica: del transcript de sesión al informe y al espejo simbólico." loading="lazy" />
+        <figcaption>Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Horizonte -->
+  <section class="tech-section">
+    <div class="wrap">
+      <span class="eyebrow reveal">Horizonte</span>
+      <h2 class="reveal">Voice-first, eyes closed</h2>
+      <p class="desc reveal">
+        La interfaz de texto actual es una beta instrumentada: expone estados, decisiones y
+        transiciones para que el facilitador pueda auditar cada paso.
+      </p>
+      <p class="pull-gold reveal">"La experiencia final imaginada es con voz, a ojos cerrados."</p>
+      <p class="reveal">
+        La persona escucha el Beacon y la guía, responde hablando, y completa el viaje sin operar una
+        pantalla. El facilitador conserva el espacio visual para supervisar, intervenir y exportar.
+      </p>
+      <figure class="gallery-plate reveal">
+        <img src="/assets/devpost/06-product-horizon.jpg" alt="Horizonte de producto: un viaje guiado por voz, sonido y presencia humana." loading="lazy" />
+        <figcaption>Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Límites -->
+  <section class="tech-section alt">
+    <div class="wrap">
+      <span class="eyebrow reveal">Límites</span>
+      <h2 class="reveal">No reemplaza al facilitador</h2>
+      <div class="card-grid reveal">
+        <div class="card">
+          <h3>No diagnostica</h3>
+          <p>No interpreta tu experiencia ni te dice qué significa.</p>
+        </div>
+        <div class="card">
+          <h3>No reemplaza a tu facilitador</h3>
+          <p>Es una capa de acompañamiento, no un sustituto de la persona que guía.</p>
+        </div>
+        <div class="card">
+          <h3>No actúa solo en crisis</h3>
+          <p>Ante material sensible, deriva de inmediato a un humano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="tech-cta">
+  <div class="wrap">
+    <h2 class="reveal">¿Querés usar esto en tu práctica?</h2>
+    <p class="reveal">
+      Si facilitás sesiones de PMP o Beacon y querés probar el espacio de trabajo, escribinos.
+    </p>
+    <div class="reveal">
+      <a class="btn btn-primary" href="mailto:hola@altermundi.net?subject=Psicopompo%20-%20facilitadores">Escribinos</a>
+      <a class="btn btn-ghost" href="https://psicopompo.altermundi.net" target="_blank" rel="noopener">Ver la plataforma →</a>
+      <a class="btn btn-ghost" href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">Ver la presentación →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="footer-logo" src="/assets/logo-psicopompo-hueso.png" alt="Psicopompo" />
+    <p>Psicopompo — parte del ecosistema AlterMundi · HIT · Phideus · Harmonic Beacon.</p>
+  </div>
+</footer>
+
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

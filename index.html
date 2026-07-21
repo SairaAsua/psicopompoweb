@@ -24,7 +24,7 @@
       Psicopompo
     </a>
     <div class="site-nav-links">
-      <a href="#tecnologia">Tecnología</a>
+      <a href="/tecnologia/">Tecnología</a>
       <a href="#ecosistema">Harmonic Beacon</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -243,7 +243,7 @@
           validada por expertos. La sesión se exporta solo cuando vos lo pedís explícitamente.
         </p>
         <div class="stat-row">
-          <div class="stat"><b>255</b><span>tests automatizados</span></div>
+          <div class="stat"><b>257</b><span>tests automatizados</span></div>
           <div class="stat"><b>18/18</b><span>transiciones de estado verificadas</span></div>
         </div>
         <div class="limits-box">
@@ -276,7 +276,7 @@
         puertas más para abrir.
       </p>
       <div class="door-grid reveal">
-        <a class="door-card" href="#tecnologia">
+        <a class="door-card" href="/tecnologia/">
           <span class="eyebrow">Puerta técnica</span>
           <h3>La Tecnología</h3>
           <p>Qué hay detrás del viaje: arquitectura, datos, entrenamiento y evidencia.</p>
@@ -292,94 +292,7 @@
     </div>
   </section>
 
-  <!-- ============ PUERTA: LA TECNOLOGÍA ============ -->
-  <section class="chapter c-escalera" id="tecnologia">
-    <div class="wrap">
-      <span class="eyebrow reveal">Puerta técnica</span>
-      <h2 class="reveal">Qué hay detrás del viaje</h2>
-      <p class="reveal">
-        La PMP mezcla pasajes fijos del protocolo con decisiones genuinamente contextuales.
-        Psicopompo separa esas dos escalas en vez de pedirle todo a un solo modelo: una
-        <b>columna vertebral</b> determinista sostiene la estructura del viaje (inducción, hitos,
-        descenso, regreso); <b>adaptadores de política</b> (LoRA de decisión y de compuerta) actúan
-        solo donde hay una elección real que tomar; un <b>ejecutor contextual</b> (Gemma) escribe el
-        lenguaje visible a partir de esa decisión, el historial relevante y un precedente experto.
-      </p>
-      <p class="reveal">
-        La sesión tampoco es un chat sin diferenciar: el facilitador crea la sala, el participante
-        entra con un código efímero, y en cada decisión abierta el sistema elige entre diez familias
-        de intervención (<code>INT01</code>–<code>INT10</code>) y una señal de turno — hablar,
-        esperar, backchannel. Un validador y una guarda de tiempo real revisan la respuesta antes de
-        publicarla.
-      </p>
 
-      <div class="voice" data-voice="facilitadores">
-        <span class="voice-tag">Construido junto a Julián</span>
-        <p>
-          Casi todo el trabajo pasó antes de que un modelo pudiera escribir una frase útil. Julián
-          — creador y practicante experto de la PMP — construyó y curó el material de origen, en
-          ciclos de revisión repetidos: auditando cada entrega, comparando a ciegas, incorporando
-          sus correcciones.
-        </p>
-        <div class="stat-row">
-          <div class="stat"><b>107</b><span>semillas expertas anonimizadas</span></div>
-          <div class="stat"><b>26</b><span>pares de confundibilidad clínica</span></div>
-          <div class="stat"><b>15+</b><span>años de desarrollo del método</span></div>
-        </div>
-        <p>
-          Los tres adaptadores (decisión, compuerta y ejecución) se entrenaron en casa con QLoRA
-          sobre Gemma 4 E4B, en <b>una sola estación de trabajo</b> — sin nube de entrenamiento
-          alquilada. El adaptador de ejecución quedó cargado pero inactivo en el perfil público: en
-          casos frescos, Gemma contextual sola respondía mejor.
-        </p>
-        <p class="note">
-          Horizonte de producto: la interfaz de texto actual es una beta instrumentada para poder
-          auditar cada estado y decisión. La experiencia final imaginada es <b>con voz, a ojos
-          cerrados</b> — la persona escucha el Beacon y la guía, responde hablando, y completa el
-          viaje sin operar una pantalla. El facilitador conserva el espacio visual para supervisar,
-          intervenir y exportar.
-        </p>
-        <div class="stat-row">
-          <div class="stat"><b>257</b><span>tests automatizados</span></div>
-          <div class="stat"><b>18/18</b><span>transiciones de estado verificadas</span></div>
-        </div>
-        <ul class="badge-row">
-          <li>FastAPI</li><li>React</li><li>WebSockets</li><li>PyTorch</li><li>PEFT / QLoRA</li>
-          <li>Gemma 4 E4B</li><li>Playwright</li><li>Groq</li>
-        </ul>
-        <div class="limits-box">
-          <b>Límites de hoy:</b> Psicopompo es un prototipo de investigación supervisado, no un
-          terapeuta autónomo ni un sistema de diagnóstico. Quien facilita sigue siendo responsable
-          de la sesión. La elección de intervención todavía no está resuelta del todo, y la
-          expansión mítica puede formular hipótesis que necesitan revisión humana.
-        </div>
-        <div class="card-grid">
-          <div class="card">
-            <h3>No diagnostica</h3>
-            <p>No interpreta tu experiencia ni te dice qué significa.</p>
-          </div>
-          <div class="card">
-            <h3>No reemplaza a tu facilitador</h3>
-            <p>Es una capa de acompañamiento, no un sustituto de la persona que te guía.</p>
-          </div>
-          <div class="card">
-            <h3>No actúa solo en crisis</h3>
-            <p>Ante material sensible, deriva de inmediato a un humano.</p>
-          </div>
-        </div>
-      </div>
-      <div class="voice" data-voice="participantes">
-        <span class="voice-tag">En criollo</span>
-        <p>
-          Nada de esto corre solo. Todo el sistema fue entrenado y revisado a mano, con el creador
-          del método mirando cada respuesta antes de que exista una versión pública. La parte
-          técnica existe para sostenerte a vos, no al revés.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PUERTA: EL ECOSISTEMA ============ -->
   <section class="chapter" id="ecosistema">
     <div class="wrap">
       <span class="eyebrow reveal">Puerta conceptual</span>
@@ -416,41 +329,13 @@
     </div>
   </section>
 
-  <!-- ============ EQUIPO + CONTACTO ============ -->
-  <section class="chapter c-craft" id="contacto">
-    <div class="wrap">
-      <span class="eyebrow reveal">Equipo</span>
-      <h2 class="reveal">Quiénes lo hacen</h2>
-      <div class="card-grid reveal">
-        <div class="card">
-          <h3>Julián de la Reta</h3>
-          <p>Creador y practicante experto de la Proyección del Mito Personal — 15+ años de desarrollo del método.</p>
-        </div>
-        <div class="card">
-          <h3>Mariano Fernández Méndez</h3>
-          <p>Desarrollo de Psicopompo y del ecosistema Beacon en AlterMundi.</p>
-        </div>
-        <div class="card">
-          <h3>Saira Asua</h3>
-          <p>Experiencia, pruebas y comunicación del proyecto.</p>
-        </div>
-        <div class="card">
-          <h3>Equipo AlterMundi</h3>
-          <p>Investigación y experimentación en HIT, Phideus y Harmonic Beacon.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ CTA ============ -->
-  <section class="cta">
+  <section class="cta" id="contacto">
     <div class="wrap">
       <div class="voice" data-voice="facilitadores">
         <h2>¿Facilitás sesiones de PMP o Beacon?</h2>
-        <p>Si querés usar esta tecnología en tu práctica, llamanos.</p>
-        <p class="phone-cta">📞 <a href="tel:+543547469632">3547 469632</a></p>
-        <a class="btn btn-primary" href="mailto:hola@altermundi.net?subject=Psicopompo%20-%20facilitadores">Escribinos</a>
-        <a class="btn btn-ghost" href="https://psicopompo.altermundi.net" target="_blank" rel="noopener">Ver la plataforma</a>
+        <p>Si querés usar esta tecnología en tu práctica, escribinos.</p>
+        <a class="btn btn-primary" href="https://wa.me/543547469632" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="voice" data-voice="participantes">
         <h2>¿Tenés una sesión programada?</h2>

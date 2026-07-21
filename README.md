@@ -27,7 +27,8 @@ Abrir `http://localhost:8773`.
 
 ## Estructura
 
-- `index.html` — página única, todo el contenido.
+- `index.html` — landing page, narrativa del viaje en 5 capítulos.
+- `tecnologia/index.html` — página propia con la arquitectura, el dataset de entrenamiento, el stack y los límites. Se accede desde `/tecnologia/`.
 - `assets/styles.css` — sistema de marca propio de Psicopompo (paleta Hueso Lunar / Tinta Umbral /
   Verdín / Cobre Vivo / Oro Antiguo, tipografía Fraunces + Manrope). Estética nocturna con texturas
   generadas (ver abajo).
@@ -42,12 +43,12 @@ Abrir `http://localhost:8773`.
 
 Página completa con:
 - Hero con la polilla generada + isotipo chico como marca (no centralizado).
-- Nav superior fija (Psicopompo / Tecnología / Harmonic Beacon / Contacto).
+- Nav superior fija (Psicopompo / Tecnología / Harmonic Beacon / Contacto). Tecnología ahora tiene su propia página en `/tecnologia/`.
 - Viaje narrativo en 5 capítulos (Umbral → Escalera → Guardián → Viaje libre → Regreso), con
   toggle de voz facilitador/participante en cada capítulo.
-- Dos "puertas" de profundización: `#tecnologia` (arquitectura, dataset, evidencia — actualizado
-  con datos reales del repo `Mar-IA-no/PMP-GPT`) y `#ecosistema` (HIT → Phideus → Beacon → PMP →
-  HMP, con links oficiales).
+- Puerta conceptual (`#ecosistema`): HIT → Phideus → Beacon → PMP → HMP, con links oficiales.
+- Puerta técnica apunta a `/tecnologia/`, con arquitectura, dataset, evidencia y horizonte de producto
+  (información ampliada desde la presentación Devpost).
 - Sección de equipo (`#contacto`): Julián de la Reta, Mariano Fernández Méndez, Saira Asua, equipo
   AlterMundi.
 - CTA de facilitadores con teléfono real (3547 469632) + email + link a la plataforma.
