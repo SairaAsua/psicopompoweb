@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-active-lang="es">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -24,9 +24,10 @@
       Psicopompo
     </a>
     <div class="site-nav-links">
-      <a href="/tecnologia/">Tecnología</a>
-      <a href="#ecosistema">Harmonic Beacon</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/tecnologia/"><span data-lang="es">Tecnología</span><span data-lang="en">Technology</span></a>
+      <a href="https://harmonicbeacon.com" target="_blank" rel="noopener">Harmonic Beacon</a>
+      <a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+      <button class="lang-toggle" type="button" aria-label="Switch language">EN</button>
     </div>
   </div>
 </nav>
@@ -34,21 +35,32 @@
 <header class="site-header" id="top">
   <img class="brand-mark" src="/assets/logo-psicopompo-hueso.png" alt="Psicopompo" />
   <div class="hero-photo-wrap">
-    <img class="hero-photo" src="/assets/mascota-guardian-ia.jpg" alt="El Guardián del Umbral: polilla escultórica entre dos lunas, sobre pared nocturna" />
+    <video class="hero-photo" autoplay muted loop playsinline poster="/assets/mascota-guardian-ia.jpg" aria-label="El Guardián del Umbral: polilla escultórica en movimiento sobre fondo nocturno">
+      <source src="/assets/hero-polilla.mp4" type="video/mp4" />
+    </video>
   </div>
   <div class="hero-copy">
     <div class="wrap">
       <h1>Psicopompo</h1>
       <p class="standfirst">
-        El sonido del Beacon guarda el umbral simbólico. El facilitador humano guarda el proceso.
-        Psicopompo acompaña a los dos — nunca decide el camino.
+        <span data-lang="es">El sonido del Beacon guarda el umbral simbólico. El facilitador humano guarda el proceso.
+        Psicopompo acompaña a los dos — nunca decide el camino.</span>
+        <span data-lang="en">The sound of the Beacon guards the symbolic threshold. The human facilitator guards the process.
+        Psicopompo accompanies both — it never decides the path.</span>
       </p>
 
       <div class="audience-picker" role="group" aria-label="Elegí tu perfil">
-        <button class="audience-btn" type="button" data-audience="facilitadores" aria-pressed="true">Soy facilitador/a</button>
-        <button class="audience-btn" type="button" data-audience="participantes" aria-pressed="false">Vengo a jugar</button>
+        <button class="audience-btn" type="button" data-audience="facilitadores" aria-pressed="true">
+          <span data-lang="es">Soy facilitador/a</span><span data-lang="en">I'm a facilitator</span>
+        </button>
+        <button class="audience-btn" type="button" data-audience="participantes" aria-pressed="false">
+          <span data-lang="es">Vengo a jugar</span><span data-lang="en">I'm here to play</span>
+        </button>
       </div>
-      <p class="audience-note">La info de abajo cambia según quién sos — podés alternar cuando quieras.</p>
+      <p class="audience-note">
+        <span data-lang="es">La info de abajo cambia según quién sos — podés alternar cuando quieras.</span>
+        <span data-lang="en">The info below changes depending on who you are — you can switch anytime.</span>
+      </p>
     </div>
   </div>
 </header>
@@ -58,25 +70,17 @@
   <!-- ============ ORIGEN (compartido, sin numerar — es el prólogo) ============ -->
   <section class="chapter">
     <div class="wrap">
-      <span class="eyebrow reveal">Qué es Psicopompo</span>
-      <h2 class="reveal">Una herramienta para facilitadores que juega a la Proyección Armónica del Mito</h2>
+      <span class="eyebrow reveal"><span data-lang="es">Qué es Psicopompo</span><span data-lang="en">What Psicopompo is</span></span>
+      <h2 class="reveal">
+        <span data-lang="es">Una herramienta para facilitadores que juega a la Proyección Armónica del Mito</span>
+        <span data-lang="en">A tool for facilitators that plays at Harmonic Myth Projection</span>
+      </h2>
       <p class="reveal">
-        Psicopompo es el espacio de trabajo con IA que le permite a un facilitador conducir la
+        <span data-lang="es">Psicopompo es el espacio de trabajo con IA que le permite a un facilitador conducir la
         Proyección del Mito Personal dentro del campo del Beacon — con más consistencia,
-        trazabilidad y alcance, sin dejar de ser una experiencia guiada por una persona. No nació
-        buscando un uso para la inteligencia artificial: nació de un método simbólico y un sonido
-        que ya existían.
-      </p>
-      <div class="lineage reveal">
-        <span>AlterMundi</span><span class="arrow">→</span>
-        <span>HIT</span><span class="arrow">→</span>
-        <span>Phideus / Beacon</span><span class="arrow">→</span>
-        <span>PMP / Proyección Armónica</span><span class="arrow">→</span>
-        <span class="current">Psicopompo</span>
-      </div>
-      <p class="note reveal">
-        Más abajo hay dos puertas para profundizar: una hacia la tecnología, otra hacia el
-        ecosistema del Beacon y la Proyección Armónica del Mito.
+        trazabilidad y alcance.</span>
+        <span data-lang="en">Psicopompo is the AI workspace that lets a facilitator run the Projection of the
+        Personal Myth inside the Beacon field — with more consistency, traceability and reach.</span>
       </p>
     </div>
   </section>
@@ -84,26 +88,38 @@
   <!-- ============ CAPÍTULO I — EL UMBRAL ============ -->
   <section class="chapter c-umbral">
     <div class="wrap">
-      <span class="eyebrow reveal"><span class="chapter-no">I</span> El umbral</span>
-      <h2 class="reveal">Todo viaje empieza con una puerta</h2>
+      <span class="eyebrow reveal"><span class="chapter-no">I</span> <span data-lang="es">El umbral</span><span data-lang="en">The threshold</span></span>
+      <h2 class="reveal"><span data-lang="es">Todo viaje empieza con una puerta</span><span data-lang="en">Every journey begins with a door</span></h2>
       <p class="reveal">
-        El primer hito del protocolo pide algo simple: notar un objeto, un lugar de atención, y
-        llegar hasta una puerta. Es el punto de entrada — nunca se fuerza, se invita.
+        <span data-lang="es">El primer hito del protocolo pide algo simple: notar un objeto, un lugar de atención, y
+        llegar hasta una puerta. Es el punto de entrada — nunca se fuerza, se invita.</span>
+        <span data-lang="en">The first milestone of the protocol asks for something simple: noticing an object, a
+        place of attention, and reaching a door. It's the entry point — never forced, only invited.</span>
       </p>
 
       <div class="voice" data-voice="facilitadores">
-        <span class="voice-tag">Para facilitadores</span>
+        <span class="voice-tag"><span data-lang="es">Para facilitadores</span><span data-lang="en">For facilitators</span></span>
         <p>
-          Este primer momento (Hito A) es un guion fijo de inducción: objeto de atención, lugar,
+          <span data-lang="es">Este primer momento (Hito A) es un guion fijo de inducción: objeto de atención, lugar,
           umbral de la puerta. Psicopompo lo sostiene como una máquina de estados versionada, para
-          que empiece igual de sólido en la sesión número uno y en la número cien.
+          que empiece igual de sólido en la sesión número uno y en la número cien. Del lado del
+          participante, esto se vive simple: nota un objeto, llega a una puerta, y entra — nunca
+          se le fuerza nada.</span>
+          <span data-lang="en">This first moment (Milestone A) is a fixed induction script: object of attention,
+          place, threshold of the door. Psicopompo sustains it as a versioned state machine, so it
+          starts just as solidly in session number one as in session number one hundred. On the
+          participant's side, it's simple: they notice an object, reach a door, and walk in —
+          nothing is ever forced.</span>
         </p>
       </div>
       <div class="voice" data-voice="participantes">
-        <span class="voice-tag">Para quien viene a jugar</span>
+        <span class="voice-tag"><span data-lang="es">Para quien viene a jugar</span><span data-lang="en">For whoever comes to play</span></span>
         <p>
-          No hace falta que fuerces nada. Notá qué objeto te llama la atención ahí donde estás, y
-          dejá que aparezca una puerta. Lo único que se te pide en este primer paso es entrar.
+          <span data-lang="es">No hace falta que fuerces nada. Notá qué objeto te llama la atención ahí donde estás, y
+          dejá que aparezca una puerta. Lo único que se te pide en este primer paso es entrar.</span>
+          <span data-lang="en">You don't need to force anything. Notice which object catches your attention right
+          where you are, and let a door appear. The only thing asked of you in this first step is
+          to walk in.</span>
         </p>
       </div>
     </div>
@@ -112,26 +128,35 @@
   <!-- ============ CAPÍTULO II — LA ESCALERA ============ -->
   <section class="chapter c-escalera">
     <div class="wrap">
-      <span class="eyebrow reveal"><span class="chapter-no">II</span> La escalera</span>
-      <h2 class="reveal">Bajar, escalón por escalón</h2>
+      <span class="eyebrow reveal"><span class="chapter-no">II</span> <span data-lang="es">La escalera</span><span data-lang="en">The staircase</span></span>
+      <h2 class="reveal"><span data-lang="es">Bajar, escalón por escalón</span><span data-lang="en">Descending, step by step</span></h2>
       <p class="reveal">
-        Después de la puerta viene el descenso: una cuenta que baja, escalón a escalón, hacia el
-        fondo del mundo imaginal. Es la parte más silenciosa del viaje — y la más sostenida.
+        <span data-lang="es">Después de la puerta viene el descenso: una cuenta que baja, escalón a escalón, hacia el
+        fondo del mundo imaginal. Es la parte más silenciosa del viaje — y la más sostenida.</span>
+        <span data-lang="en">After the door comes the descent: a count going down, step by step, toward the
+        bottom of the imaginal world. It's the quietest part of the journey — and the most sustained.</span>
       </p>
 
       <div class="voice" data-voice="facilitadores">
-        <span class="voice-tag">Para facilitadores</span>
+        <span class="voice-tag"><span data-lang="es">Para facilitadores</span><span data-lang="en">For facilitators</span></span>
         <p>
-          El descenso corre sobre transiciones deterministas: pasajes fijos que no dependen del
+          <span data-lang="es">El descenso corre sobre transiciones deterministas: pasajes fijos que no dependen del
           modelo para sostenerse. Ahí es donde una máquina de estados hace mejor su trabajo que un
-          chatbot abierto — no improvisa dónde no debe.
+          chatbot abierto — no improvisa dónde no debe. Para el participante, esto se siente como
+          una cuenta tranquila hacia abajo, sin apuro, a su propio ritmo.</span>
+          <span data-lang="en">The descent runs on deterministic transitions: fixed passages that don't depend on
+          the model to hold up. That's where a state machine does its job better than an open
+          chatbot — it doesn't improvise where it shouldn't. For the participant, this feels like
+          a calm count going down, unhurried, at their own pace.</span>
         </p>
       </div>
       <div class="voice" data-voice="participantes">
-        <span class="voice-tag">Para quien viene a jugar</span>
+        <span class="voice-tag"><span data-lang="es">Para quien viene a jugar</span><span data-lang="en">For whoever comes to play</span></span>
         <p>
-          No hay apuro. Contá los escalones a tu ritmo. Cuanto más despacio bajás, más nítido suele
-          aparecer lo que te espera abajo.
+          <span data-lang="es">No hay apuro. Contá los escalones a tu ritmo. Cuanto más despacio bajás, más nítido suele
+          aparecer lo que te espera abajo.</span>
+          <span data-lang="en">There's no rush. Count the steps at your own pace. The slower you go down, the more
+          clearly what's waiting for you below tends to appear.</span>
         </p>
       </div>
     </div>
@@ -141,51 +166,79 @@
   <section class="chapter c-guardian">
     <img class="chapter-eye reveal" src="/assets/mascota-ojo-detalle.jpg" alt="" aria-hidden="true" />
     <div class="wrap">
-      <span class="eyebrow reveal"><span class="chapter-no">III</span> El Guardián</span>
-      <h2 class="reveal">Una doble guardia: sonora adentro, humana afuera</h2>
+      <span class="eyebrow reveal"><span class="chapter-no">III</span> <span data-lang="es">El Guardián</span><span data-lang="en">The Guardian</span></span>
+      <h2 class="reveal"><span data-lang="es">Una doble guardia: sonora adentro, humana afuera</span><span data-lang="en">A double guard: sonic inside, human outside</span></h2>
 
       <div class="guardian-figure-wrap reveal">
         <img class="guardian-figure" src="/assets/mascota-guardian-ia.jpg" alt="El Guardián del Umbral: polilla escultórica entre dos lunas, sobre pared nocturna" />
-        <p class="guardian-caption">El Guardián del Umbral — a partir de la polilla real del portón, reinterpretada.</p>
+        <p class="guardian-caption">
+          <span data-lang="es">El Guardián del Umbral — a partir de la polilla real del portón, reinterpretada.</span>
+          <span data-lang="en">The Guardian of the Threshold — reimagined from the real moth on the gate.</span>
+        </p>
       </div>
 
       <p class="reveal">
-        Al llegar al fondo del descenso, el protocolo tiene un momento formal:
+        <span data-lang="es">Al llegar al fondo del descenso, el protocolo tiene un momento formal:
         <b>Hito B — el Encuentro con el Guardián del Umbral</b>. Se le pide a la psique que le dé
-        forma a una figura. En cada sesión real registrada para ese hito, el Beacon está sonando.
+        forma a una figura. En cada sesión real registrada para ese hito, el Beacon está sonando.</span>
+        <span data-lang="en">On reaching the bottom of the descent, the protocol has a formal moment:
+        <b>Milestone B — the Encounter with the Guardian of the Threshold</b>. The psyche is asked
+        to give shape to a figure. In every real session recorded for that milestone, the Beacon
+        is sounding.</span>
       </p>
       <div class="quote reveal">
-        “El descenso ha concluido. Se ejecuta la primera instrucción obligatoria del Hito B:
+        <span data-lang="es">“El descenso ha concluido. Se ejecuta la primera instrucción obligatoria del Hito B:
         invocar la presencia del Guardián del Umbral y forzar a la psique a otorgarle una forma
-        definida.”
+        definida.”</span>
+        <span data-lang="en">“The descent has concluded. The first mandatory instruction of Milestone B is
+        executed: invoke the presence of the Guardian of the Threshold and force the psyche to
+        give it a defined form.”</span>
         <cite>Protocolo PMP · Hito B, semilla HITO_B_001</cite>
       </div>
       <p class="reveal">
-        Ese guardián aparece adentro del viaje. Afuera, Psicopompo y el facilitador humano cumplen
+        <span data-lang="es">Ese guardián aparece adentro del viaje. Afuera, Psicopompo y el facilitador humano cumplen
         la misma función, pero operativa: sostienen el protocolo, anclan la emoción antes de
         avanzar, y derivan cuando corresponde. El nombre no es casual — un psicopompo, en el mito,
-        es quien <i>acompaña</i> el tránsito sin decidir el destino.
+        es quien <i>acompaña</i> el tránsito sin decidir el destino.</span>
+        <span data-lang="en">That guardian appears inside the journey. Outside, Psicopompo and the human
+        facilitator carry out the same function, but operationally: they sustain the protocol,
+        anchor the emotion before moving forward, and refer out when appropriate. The name isn't
+        accidental — a psychopomp, in myth, is who <i>accompanies</i> the transit without deciding
+        the destination.</span>
       </p>
       <div class="quote reveal">
-        “Vas a atravesar esta experiencia con Psicopompo. Yo voy a estar monitoreando... tiene que
-        estar la posibilidad de alguien que venga siguiendo y tenga alertas sensibles.”
+        <span data-lang="es">“Vas a atravesar esta experiencia con Psicopompo. Yo voy a estar monitoreando... tiene que
+        estar la posibilidad de alguien que venga siguiendo y tenga alertas sensibles.”</span>
+        <span data-lang="en">“You're going to go through this experience with Psicopompo. I'm going to be
+        monitoring... there has to be the possibility of someone following along with sensitive
+        alerts.”</span>
         <cite>Reunión de equipo, 27/05 — origen del proyecto</cite>
       </div>
 
       <div class="voice" data-voice="facilitadores">
-        <span class="voice-tag">Para facilitadores</span>
+        <span class="voice-tag"><span data-lang="es">Para facilitadores</span><span data-lang="en">For facilitators</span></span>
         <p>
-          Un adaptador de compuerta resuelve esta bifurcación acotada del Hito A y el Hito B —
+          <span data-lang="es">Un adaptador de compuerta resuelve esta bifurcación acotada del Hito A y el Hito B —
           nunca en flujo libre. Vos seguís siendo quien decide si hace falta intervenir antes de
-          que la escena avance.
+          que la escena avance. Del otro lado, el participante recién le está dando forma a lo que
+          sea que haya aparecido — una sombra, un monstruo, una figura que no termina de
+          definirse — y no hay una forma correcta de sentirlo.</span>
+          <span data-lang="en">A gate adapter resolves this bounded fork at Milestone A and Milestone B — never
+          during the free journey. You remain the one who decides whether to intervene before the
+          scene moves forward. On the other side, the participant is just now giving shape to
+          whatever has appeared — a shadow, a monster, a figure that never quite settles — and
+          there's no correct way to feel it.</span>
         </p>
       </div>
       <div class="voice" data-voice="participantes">
-        <span class="voice-tag">Para quien viene a jugar</span>
+        <span class="voice-tag"><span data-lang="es">Para quien viene a jugar</span><span data-lang="en">For whoever comes to play</span></span>
         <p>
-          Sea lo que sea que aparezca — una sombra, un monstruo peludo, una figura que no termina
+          <span data-lang="es">Sea lo que sea que aparezca — una sombra, un monstruo peludo, una figura que no termina
           de definirse — no hay una forma correcta de sentirlo. Solo hace falta darle una forma y
-          quedarte un momento con lo que te produce.
+          quedarte un momento con lo que te produce.</span>
+          <span data-lang="en">Whatever shows up — a shadow, a furry monster, a figure that never quite settles
+          into shape — there's no correct way to feel it. All that's needed is to give it a shape
+          and stay a moment with what it stirs in you.</span>
         </p>
       </div>
     </div>
@@ -195,28 +248,34 @@
   <section class="chapter c-libre">
     <img class="chapter-eye reveal" src="/assets/mascota-ojo-detalle.jpg" alt="" aria-hidden="true" />
     <div class="wrap">
-      <span class="eyebrow reveal"><span class="chapter-no">IV</span> El viaje libre</span>
-      <h2 class="reveal">De acá en más, el juego es tuyo</h2>
+      <span class="eyebrow reveal"><span class="chapter-no">IV</span> <span data-lang="es">El viaje libre</span><span data-lang="en">The free journey</span></span>
+      <h2 class="reveal"><span data-lang="es">De acá en más, el juego es tuyo</span><span data-lang="en">From here on, the game is yours</span></h2>
       <p class="reveal">
-        Con el guardián ya presente, el viaje se abre. Facilitador y participante tienen
-        interfaces separadas y sincronizadas para recorrerlo juntos.
+        <span data-lang="es">Con el guardián ya presente, el viaje se abre. Facilitador y participante tienen
+        interfaces separadas y sincronizadas para recorrerlo juntos.</span>
+        <span data-lang="en">With the guardian already present, the journey opens up. Facilitator and
+        participant have separate, synchronized interfaces to travel it together.</span>
       </p>
 
       <div class="voice" data-voice="facilitadores">
-        <span class="voice-tag">Para facilitadores</span>
+        <span class="voice-tag"><span data-lang="es">Para facilitadores</span><span data-lang="en">For facilitators</span></span>
         <ul class="tech-list">
-          <li>Un adaptador de decisión elige, turno a turno, una de diez familias de intervención de la PMP y la señal de turno (hablar, esperar, backchannel).</li>
-          <li>Gemma en modo contextual escribe la respuesta a partir de la política elegida, la conversación relevante y un precedente experto recuperado.</li>
-          <li>Reproduce una pista representativa del Beacon, en español o inglés, con dictado y voz desde el navegador.</li>
-          <li>Vos controlás directamente pausas, el estado del Beacon, el regreso, y podés abrir un canal humano de varios turnos sin avanzar la sesión — ese canal queda afuera del modelo y de la traducción.</li>
+          <li><span data-lang="es">Psicopompo elige, turno a turno, una de diez familias de intervención de la PMP y la señal de turno (hablar, esperar, backchannel).</span><span data-lang="en">Psicopompo chooses, turn by turn, one of ten PMP intervention families and the turn signal (speak, wait, backchannel).</span></li>
+          <li><span data-lang="es">Psicopompo escribe la respuesta a partir de la política elegida, la conversación relevante y un precedente experto recuperado.</span><span data-lang="en">Psicopompo writes the response from the chosen policy, the relevant conversation and a retrieved expert precedent.</span></li>
+          <li><span data-lang="es">Reproduce una pista representativa del Beacon, en español o inglés, con dictado y voz desde el navegador.</span><span data-lang="en">Plays a representative Beacon track, in Spanish or English, with browser dictation and voice.</span></li>
+          <li><span data-lang="es">Vos controlás directamente pausas, el estado del Beacon, el regreso, y podés abrir un canal humano de varios turnos sin avanzar la sesión — ese canal queda afuera del modelo y de la traducción.</span><span data-lang="en">You directly control pauses, the Beacon state, the return, and can open a multi-turn human channel without advancing the session — that channel stays outside the model and the translation.</span></li>
+          <li><span data-lang="es">El participante tiene su propia pantalla, sincronizada con la tuya, y puede pedir que se lo digan de otra manera sin que eso cambie el rumbo del viaje.</span><span data-lang="en">The participant has their own screen, synchronized with yours, and can ask for things to be said another way without changing the course of the journey.</span></li>
         </ul>
       </div>
       <div class="voice" data-voice="participantes">
-        <span class="voice-tag">Para quien viene a jugar</span>
+        <span class="voice-tag"><span data-lang="es">Para quien viene a jugar</span><span data-lang="en">For whoever comes to play</span></span>
         <p>
-          Tenés tu propia pantalla, sincronizada con la de quien te acompaña. Si algo no te suena
+          <span data-lang="es">Tenés tu propia pantalla, sincronizada con la de quien te acompaña. Si algo no te suena
           bien, podés pedir que te lo digan de otra manera — sin que eso cambie el rumbo de lo que
-          estás viviendo. El juego es tuyo; nadie decide por vos qué aparece.
+          estás viviendo. El juego es tuyo; nadie decide por vos qué aparece.</span>
+          <span data-lang="en">You have your own screen, synchronized with the one guiding you. If something
+          doesn't sound right, you can ask for it to be said another way — without that changing
+          the course of what you're living. The game is yours; no one decides for you what appears.</span>
         </p>
       </div>
     </div>
@@ -226,39 +285,56 @@
   <section class="chapter c-regreso">
     <img class="chapter-eye reveal" src="/assets/mascota-ojo-detalle.jpg" alt="" aria-hidden="true" />
     <div class="wrap">
-      <span class="eyebrow reveal"><span class="chapter-no">V</span> El regreso</span>
-      <h2 class="reveal">Subir de nuevo, con algo en las manos</h2>
+      <span class="eyebrow reveal"><span class="chapter-no">V</span> <span data-lang="es">El regreso</span><span data-lang="en">The return</span></span>
+      <h2 class="reveal"><span data-lang="es">Subir de nuevo, con algo en las manos</span><span data-lang="en">Coming back up, with something in your hands</span></h2>
       <p class="reveal">
-        El viaje cierra con el regreso y la reintegración sensorial. Un índice propio y local busca
+        <span data-lang="es">El viaje cierra con el regreso y la reintegración sensorial. Un índice propio y local busca
         pasajes en una biblioteca simbólica de dieciséis fuentes, y con eso arma algo para
-        llevarse.
+        llevarse.</span>
+        <span data-lang="en">The journey closes with the return and sensory reintegration. A private, local
+        index searches for passages in a symbolic library of sixteen sources, and with that builds
+        something to take with you.</span>
       </p>
-      <p class="pull-gold reveal">“Cruzar también es transformarse.”</p>
+      <p class="pull-gold reveal">
+        <span data-lang="es">“Cruzar también es transformarse.”</span>
+        <span data-lang="en">“To cross is also to transform.”</span>
+      </p>
 
       <div class="voice" data-voice="facilitadores">
-        <span class="voice-tag">Para facilitadores</span>
+        <span class="voice-tag"><span data-lang="es">Para facilitadores</span><span data-lang="en">For facilitators</span></span>
         <p>
-          Gemma produce un informe revisable para vos, y un espejo simbólico en primera persona
+          <span data-lang="es">Psicopompo produce un informe revisable para vos, y un espejo simbólico en primera persona
           para el participante — una ayuda interpretativa en beta, no una lectura clínica ni
-          validada por expertos. La sesión se exporta solo cuando vos lo pedís explícitamente.
+          validada por expertos. La sesión se exporta solo cuando vos lo pedís explícitamente.</span>
+          <span data-lang="en">Psicopompo produces a reviewable report for you, and a first-person symbolic mirror
+          for the participant — a beta interpretive aid, not a clinical or expert-validated
+          reading. The session is exported only when you explicitly request it.</span>
         </p>
         <div class="stat-row">
-          <div class="stat"><b>257</b><span>tests automatizados</span></div>
-          <div class="stat"><b>18/18</b><span>transiciones de estado verificadas</span></div>
+          <div class="stat"><b>257</b><span><span data-lang="es">tests automatizados</span><span data-lang="en">automated tests</span></span></div>
+          <div class="stat"><b>18/18</b><span><span data-lang="es">transiciones de estado verificadas</span><span data-lang="en">state transitions verified</span></span></div>
         </div>
         <div class="limits-box">
-          <b>Límites de hoy:</b> Psicopompo es un prototipo de investigación supervisado, no un
+          <b><span data-lang="es">Límites de hoy:</span><span data-lang="en">Today's limits:</span></b>
+          <span data-lang="es">Psicopompo es un prototipo de investigación supervisado, no un
           terapeuta autónomo. Quien facilita sigue siendo responsable de la sesión. La elección de
           intervención todavía no está resuelta del todo, y la expansión mítica puede formular
-          hipótesis que necesitan revisión humana.
+          hipótesis que necesitan revisión humana.</span>
+          <span data-lang="en">Psicopompo is a supervised research prototype, not an autonomous
+          therapist. Whoever facilitates remains responsible for the session. Intervention
+          selection is not fully solved yet, and myth expansion can formulate hypotheses that
+          need human review.</span>
         </div>
       </div>
       <div class="voice" data-voice="participantes">
-        <span class="voice-tag">Para quien viene a jugar</span>
+        <span class="voice-tag"><span data-lang="es">Para quien viene a jugar</span><span data-lang="en">For whoever comes to play</span></span>
         <p>
-          Te llevás un espejo simbólico escrito en primera persona — una manera de mirar lo que
+          <span data-lang="es">Te llevás un espejo simbólico escrito en primera persona — una manera de mirar lo que
           apareció, no una lectura definitiva de lo que significa. Nunca decide por vos ni
-          interpreta lo que sentís.
+          interpreta lo que sentís.</span>
+          <span data-lang="en">You take with you a first-person symbolic mirror — a way of looking at what
+          appeared, not a definitive reading of what it means. It never decides for you or
+          interprets what you feel.</span>
         </p>
       </div>
     </div>
@@ -269,62 +345,27 @@
   <!-- ============ DOS PUERTAS MÁS ============ -->
   <section class="chapter c-craft">
     <div class="wrap">
-      <span class="eyebrow reveal">Para seguir bajando</span>
-      <h2 class="reveal">Dos puertas más</h2>
+      <span class="eyebrow reveal"><span data-lang="es">Para seguir bajando</span><span data-lang="en">To keep going down</span></span>
+      <h2 class="reveal"><span data-lang="es">Dos puertas más</span><span data-lang="en">Two more doors</span></h2>
       <p class="reveal">
-        El viaje del participante termina en el regreso. Pero si querés seguir explorando, hay dos
-        puertas más para abrir.
+        <span data-lang="es">El viaje del participante termina en el regreso. Pero si querés seguir explorando, hay dos
+        puertas más para abrir.</span>
+        <span data-lang="en">The participant's journey ends at the return. But if you want to keep exploring,
+        there are two more doors to open.</span>
       </p>
       <div class="door-grid reveal">
         <a class="door-card" href="/tecnologia/">
-          <span class="eyebrow">Puerta técnica</span>
-          <h3>La Tecnología</h3>
-          <p>Qué hay detrás del viaje: arquitectura, datos, entrenamiento y evidencia.</p>
-          <span class="door-cta">Entrar →</span>
+          <span class="eyebrow"><span data-lang="es">Puerta técnica</span><span data-lang="en">Technical door</span></span>
+          <h3><span data-lang="es">La Tecnología</span><span data-lang="en">The Technology</span></h3>
+          <p><span data-lang="es">Qué hay detrás del viaje: arquitectura, datos, entrenamiento y evidencia.</span><span data-lang="en">What's behind the journey: architecture, data, training and evidence.</span></p>
+          <span class="door-cta"><span data-lang="es">Entrar →</span><span data-lang="en">Enter →</span></span>
         </a>
-        <a class="door-card" href="#ecosistema">
-          <span class="eyebrow">Puerta conceptual</span>
-          <h3>El Beacon + la Proyección Armónica del Mito</h3>
-          <p>Dónde se cruzan el sonido, el método de Julián y quince años de trabajo simbólico.</p>
-          <span class="door-cta">Entrar →</span>
+        <a class="door-card" href="https://harmonicbeacon.com" target="_blank" rel="noopener">
+          <span class="eyebrow"><span data-lang="es">Puerta conceptual</span><span data-lang="en">Conceptual door</span></span>
+          <h3><span data-lang="es">El Beacon + la Proyección Armónica del Mito</span><span data-lang="en">The Beacon + Harmonic Myth Projection</span></h3>
+          <p><span data-lang="es">Dónde se cruzan el sonido, el método de Julián y quince años de trabajo simbólico.</span><span data-lang="en">Where the sound, Julián's method and fifteen years of symbolic work meet.</span></p>
+          <span class="door-cta"><span data-lang="es">Entrar →</span><span data-lang="en">Enter →</span></span>
         </a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="chapter" id="ecosistema">
-    <div class="wrap">
-      <span class="eyebrow reveal">Puerta conceptual</span>
-      <h2 class="reveal">Dónde se cruzan el Beacon y la Proyección del Mito</h2>
-      <p class="reveal">
-        AlterMundi es un ecosistema de investigación y experimentación que trabaja teoría armónica,
-        sistemas físicos, cómputo, percepción y prácticas colectivas. Su libro y programa de
-        investigación, la <b>Teoría de la Información Armónica (HIT)</b>, estudia si las relaciones
-        armónicas pueden ser un lenguaje común para entender cómo los sistemas se organizan, se
-        estabilizan y se transforman — es una propuesta de investigación, no una afirmación médica
-        o de bienestar establecida.
-      </p>
-      <p class="reveal">
-        Esa teoría se explora por dos caminos. <b>Phideus</b> es la rama computacional. <b>Harmonic
-        Beacon</b> es la rama experiencial: un dispositivo y un protocolo pensados para sostener un
-        campo acústico armónico a través de la proporción, la resonancia, la interferencia, la
-        sala, el cuerpo, la duración y la escucha situada — nunca presentado como terapia de
-        frecuencias ni tratamiento médico.
-      </p>
-      <p class="reveal">
-        La <b>Proyección del Mito Personal (PMP)</b> es la práctica simbólica guiada que Julián
-        desarrolló en más de quince años de trabajo profesional: un viaje imaginal, una secuencia
-        estable de hitos y una caja de herramientas de intervenciones. Practicada dentro del campo
-        del Beacon, la experiencia combinada se llama <b>Proyección Armónica del Mito (HMP)</b>.
-        Psicopompo es la capa digital que opera esa práctica combinada.
-      </p>
-      <div class="link-row reveal">
-        <a href="https://altermundi.net" target="_blank" rel="noopener">AlterMundi</a>
-        <a href="https://hit.altermundi.net" target="_blank" rel="noopener">Harmonic Information Theory</a>
-        <a href="https://phideus.net" target="_blank" rel="noopener">Phideus</a>
-        <a href="https://harmonicbeacon.com" target="_blank" rel="noopener">Harmonic Beacon</a>
-        <a href="https://proyecciondelmito.harmonicbeacon.com" target="_blank" rel="noopener">Proyección del Mito Personal</a>
       </div>
     </div>
   </section>
@@ -333,14 +374,14 @@
   <section class="cta" id="contacto">
     <div class="wrap">
       <div class="voice" data-voice="facilitadores">
-        <h2>¿Facilitás sesiones de PMP o Beacon?</h2>
-        <p>Si querés usar esta tecnología en tu práctica, escribinos.</p>
+        <h2><span data-lang="es">¿Facilitás sesiones de PMP o Beacon?</span><span data-lang="en">Do you facilitate PMP or Beacon sessions?</span></h2>
+        <p><span data-lang="es">Si querés usar esta tecnología en tu práctica, escribinos.</span><span data-lang="en">If you want to use this technology in your practice, message us.</span></p>
         <a class="btn btn-primary" href="https://wa.me/543547469632" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="voice" data-voice="participantes">
-        <h2>¿Tenés una sesión programada?</h2>
-        <p>Consultá con tu facilitador o facilitadora cualquier duda antes de empezar.</p>
-        <a class="btn btn-primary" href="mailto:hola@altermundi.net?subject=Psicopompo%20-%20participantes">Escribinos</a>
+        <h2><span data-lang="es">¿Tenés una sesión programada?</span><span data-lang="en">Do you have a session scheduled?</span></h2>
+        <p><span data-lang="es">Consultá con tu facilitador o facilitadora cualquier duda antes de empezar.</span><span data-lang="en">Ask your facilitator any questions before you begin.</span></p>
+        <a class="btn btn-primary" href="mailto:hola@altermundi.net?subject=Psicopompo%20-%20participantes"><span data-lang="es">Escribinos</span><span data-lang="en">Message us</span></a>
       </div>
     </div>
   </section>
@@ -350,7 +391,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <img class="footer-logo" src="/assets/logo-psicopompo-hueso.png" alt="Psicopompo" />
-    <p>Psicopompo — parte del ecosistema AlterMundi · HIT · Phideus · Harmonic Beacon.</p>
+    <p>Psicopompo — <span data-lang="es">parte del ecosistema AlterMundi · HIT · Phideus · Harmonic Beacon.</span><span data-lang="en">part of the AlterMundi · HIT · Phideus · Harmonic Beacon ecosystem.</span></p>
   </div>
 </footer>
 

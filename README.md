@@ -42,7 +42,7 @@ Abrir `http://localhost:8773`.
 ## Estado actual (21/07/2026)
 
 Página completa con:
-- Hero con la polilla generada + isotipo chico como marca (no centralizado).
+- Hero con **video animado** generado por Grok (xAI) de la polilla colorida en movimiento, con partículas doradas y sombra sobre fondo nocturno violeta. Usa `assets/hero-polilla.mp4` y respeta `prefers-reduced-motion` (fallback a imagen estática). Isotipo chico como marca (no centralizado).
 - Nav superior fija (Psicopompo / Tecnología / Harmonic Beacon / Contacto). Tecnología ahora tiene su propia página en `/tecnologia/`.
 - Viaje narrativo en 5 capítulos (Umbral → Escalera → Guardián → Viaje libre → Regreso), con
   toggle de voz facilitador/participante en cada capítulo.

@@ -164,6 +164,25 @@ i { color: var(--hueso-dim); }
 }
 .site-nav-links a:hover { color: var(--oro-glow); }
 
+.lang-toggle {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--hueso);
+  background: rgba(196, 154, 69, 0.1);
+  border: 1px solid var(--oro);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.lang-toggle:hover { background: var(--oro); color: var(--noche); }
+
+/* Bilingüe: se oculta el idioma que no está activo */
+html[data-active-lang="es"] [data-lang="en"] { display: none; }
+html[data-active-lang="en"] [data-lang="es"] { display: none; }
+
 @media (max-width: 560px) {
   .site-nav-inner { flex-direction: column; gap: 0.6rem; padding: 0.7rem 1rem; }
   .site-nav-links { gap: 1rem; justify-content: center; }
@@ -190,34 +209,34 @@ i { color: var(--hueso-dim); }
 
 .hero-photo-wrap {
   position: relative;
-  height: min(56vh, 460px);
-  min-height: 300px;
-  overflow: hidden;
+  padding: 2.4rem 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
 }
 .hero-photo {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: auto;
-  height: 92%;
-  max-width: 92%;
-  object-fit: contain;
+  position: relative;
+  width: min(340px, 60vw);
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(196, 154, 69, 0.35);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 50px rgba(196,154,69,0.18);
   will-change: transform;
 }
-.hero-photo-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(23,14,28,0.05) 0%, rgba(23,14,28,0.35) 55%, var(--noche) 100%);
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo {
+    display: none;
+  }
+  .hero-photo-wrap {
+    background: url("/assets/mascota-guardian-ia.jpg") center/contain no-repeat;
+    min-height: 260px;
+  }
 }
 
 .hero-copy {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 2.6rem 0 3rem;
-  margin-top: -3.2rem;
+  padding: 1rem 0 3rem;
 }
 
 .hero-copy h1 {
