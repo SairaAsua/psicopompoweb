@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/styles.css" />
+<link rel="stylesheet" href="/assets/styles.css?v=3" />
 </head>
 <body>
 
@@ -27,7 +27,10 @@
       <a href="/tecnologia/"><span data-lang="es">Tecnología</span><span data-lang="en">Technology</span></a>
       <a href="https://harmonicbeacon.com" target="_blank" rel="noopener">Harmonic Beacon</a>
       <a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
-      <button class="lang-toggle" type="button" aria-label="Switch language">EN</button>
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button class="lang-switch-opt" type="button" data-set-lang="es">ES</button>
+        <button class="lang-switch-opt" type="button" data-set-lang="en">EN</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -395,6 +398,6 @@
   </div>
 </footer>
 
-<script src="/assets/main.js" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 </body>
 </html>

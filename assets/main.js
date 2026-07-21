@@ -1,19 +1,20 @@
 (function () {
   var LANG_KEY = "psicopompo-lang";
-  var langToggle = document.querySelector(".lang-toggle");
+  var langOpts = document.querySelectorAll(".lang-switch-opt");
 
   function setLang(lang) {
     document.documentElement.setAttribute("data-active-lang", lang);
-    if (langToggle) langToggle.textContent = lang === "es" ? "EN" : "ES";
+    langOpts.forEach(function (opt) {
+      opt.setAttribute("aria-pressed", String(opt.getAttribute("data-set-lang") === lang));
+    });
     try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
   }
 
-  if (langToggle) {
-    langToggle.addEventListener("click", function () {
-      var current = document.documentElement.getAttribute("data-active-lang") || "es";
-      setLang(current === "es" ? "en" : "es");
+  langOpts.forEach(function (opt) {
+    opt.addEventListener("click", function () {
+      setLang(opt.getAttribute("data-set-lang"));
     });
-  }
+  });
 
   var storedLang = null;
   try { storedLang = localStorage.getItem(LANG_KEY); } catch (e) {}
