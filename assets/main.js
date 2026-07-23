@@ -1,12 +1,22 @@
 (function () {
   var LANG_KEY = "psicopompo-lang";
   var langOpts = document.querySelectorAll(".lang-switch-opt");
+  var i18nMeta = document.querySelectorAll("[data-es][data-en]");
 
   function setLang(lang) {
     document.documentElement.setAttribute("data-active-lang", lang);
+    document.documentElement.setAttribute("lang", lang);
     langOpts.forEach(function (opt) {
       opt.setAttribute("aria-pressed", String(opt.getAttribute("data-set-lang") === lang));
     });
+    i18nMeta.forEach(function (el) {
+      var val = el.getAttribute(lang === "en" ? "data-en" : "data-es");
+      if (val == null) return;
+      if (el.tagName === "META") el.setAttribute("content", val);
+      else el.textContent = val;
+    });
+    var ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute("content", lang === "en" ? "en_US" : "es_AR");
     try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
   }
 
@@ -45,6 +55,17 @@
   setAudience(stored === "participantes" ? "participantes" : "facilitadores");
 
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    var heroVideo = document.querySelector("video.hero-photo");
+    if (heroVideo) {
+      heroVideo.removeAttribute("autoplay");
+      heroVideo.pause();
+      heroVideo.removeAttribute("src");
+      heroVideo.querySelectorAll("source").forEach(function (s) { s.removeAttribute("src"); });
+      heroVideo.load();
+    }
+  }
 
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
     var revealEls = document.querySelectorAll(".reveal");

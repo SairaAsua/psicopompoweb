@@ -3,17 +3,33 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Psicopompo — Tecnología</title>
-<meta name="description" content="Arquitectura, dataset y stack de Psicopompo: el espacio de trabajo con IA para la Proyección Armónica del Mito." />
-<link rel="icon" href="/assets/logo-psicopompo.png" type="image/png" />
-<meta property="og:title" content="Psicopompo — Tecnología" />
-<meta property="og:description" content="Cómo funciona el copiloto de IA para facilitadores de la Proyección del Mito Personal." />
-<meta property="og:image" content="/assets/mascota-guardian-ia.jpg" />
+<title data-es="Psicopompo — Tecnología" data-en="Psicopompo — Technology">Psicopompo — Tecnología</title>
+<meta name="description"
+  data-es="Arquitectura, dataset y stack de Psicopompo: el espacio de trabajo con IA para la Proyección Armónica del Mito."
+  data-en="Architecture, training dataset and stack of Psicopompo: the AI workspace for Harmonic Myth Projection."
+  content="Arquitectura, dataset y stack de Psicopompo: el espacio de trabajo con IA para la Proyección Armónica del Mito." />
+<link rel="canonical" href="https://psicopompo.harmonicbeacon.com/tecnologia/" />
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" />
+<link rel="apple-touch-icon" href="/assets/favicon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://psicopompo.harmonicbeacon.com/tecnologia/" />
+<meta property="og:site_name" content="Psicopompo" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:title"
+  data-es="Psicopompo — Tecnología"
+  data-en="Psicopompo — Technology"
+  content="Psicopompo — Tecnología" />
+<meta property="og:description"
+  data-es="Cómo funciona el copiloto de IA para facilitadores de la Proyección del Mito Personal."
+  data-en="How the AI copilot for Projection of the Personal Myth facilitators works."
+  content="Cómo funciona el copiloto de IA para facilitadores de la Proyección del Mito Personal." />
+<meta property="og:image" content="https://psicopompo.harmonicbeacon.com/assets/mascota-guardian-ia.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#170e1c" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/styles.css?v=3" />
+<link rel="stylesheet" href="/assets/styles.css?v=4" />
 <style>
   /* Tecnología — estilo más técnico, hermano de la landing, con la polilla de fondo y la sombra ayudando */
   .tech-hero {
@@ -200,31 +216,7 @@
   }
   .tech-cta h2 { margin-bottom: 0.6rem; }
   .tech-cta p { max-width: 56ch; margin: 0 auto 1.4rem; }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.85rem 1.6rem;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-primary {
-    background: var(--verdin);
-    color: var(--noche);
-    box-shadow: 0 8px 24px rgba(79,155,137,0.28);
-  }
-  .btn-primary:hover { box-shadow: 0 10px 30px rgba(79,155,137,0.4); }
-  .btn-ghost {
-    background: transparent;
-    color: var(--hueso);
-    border: 1.5px solid var(--border);
-  }
-  .btn-ghost:hover { border-color: var(--oro); color: var(--oro-glow); }
+  /* .btn / .btn-primary / .btn-ghost heredan de assets/styles.css — mismo color de CTA en todo el sitio */
 
   .stack-block {
     display: flex;
@@ -266,13 +258,14 @@
     text-decoration: underline;
   }
 </style>
+<noscript><style>.reveal,.voice{opacity:1 !important;transform:none !important;display:block !important;}</style></noscript>
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="/">
-      <img src="/assets/logo-psicopompo-hueso.png" alt="" aria-hidden="true" />
+      <img src="/assets/logo-psicopompo-hueso.png" alt="" aria-hidden="true" width="1532" height="688" />
       Psicopompo
     </a>
     <div class="site-nav-links">
@@ -395,7 +388,7 @@
         </p>
       </div>
       <figure class="gallery-plate reveal">
-        <img src="/assets/devpost/02-human-channel.jpg" alt="El canal humano: mensajes del facilitador registrados en el log de sesión, pero excluidos de todo modelo." loading="lazy" />
+        <img src="/assets/devpost/02-human-channel.jpg" alt="El canal humano: mensajes del facilitador registrados en el log de sesión, pero excluidos de todo modelo." width="1760" height="990" loading="lazy" />
         <figcaption><span data-lang="es">Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</span><span data-lang="en">Official material from the <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">OpenAI Build Week presentation</a>.</span></figcaption>
       </figure>
     </div>
@@ -431,7 +424,7 @@
         <div class="component-card" style="--accent: var(--verdin-glow);">
           <div class="role"><span data-lang="es">Lenguaje</span><span data-lang="en">Language</span></div>
           <h3><span data-lang="es">Redacción contextual</span><span data-lang="en">Contextual writing</span></h3>
-          <p><span data-lang="es">Psicopompo escribe la respuesta visible a partir de la política elegida, el historial y un precedente experto recuperado.</span><span data-lang="en">Psicopompo writes the visible response from the chosen policy, the history and a retrieved expert precedent.</span></p>
+          <p><span data-lang="es">Psicopompo escribe la respuesta visible a partir de la política elegida, el historial y un precedente experto recuperado. Es el modelo base — no un tercer adaptador entrenado; ese adaptador (de ejecución) existe pero quedó inactivo.</span><span data-lang="en">Psicopompo writes the visible response from the chosen policy, the history and a retrieved expert precedent. It's the base model — not a third trained adapter; that adapter (execution) exists but stayed inactive.</span></p>
         </div>
         <div class="component-card" style="--accent: var(--oro-glow);">
           <div class="role"><span data-lang="es">Render</span><span data-lang="en">Render</span></div>
@@ -456,7 +449,7 @@
         Groq, turns and myth expansion.</span>
       </p>
       <figure class="gallery-plate reveal">
-        <img src="/assets/devpost/04-complete-ai-ml-stack.jpg" alt="Mapa completo del stack de IA y ML de Psicopompo." loading="lazy" />
+        <img src="/assets/devpost/04-complete-ai-ml-stack.jpg" alt="Mapa completo del stack de IA y ML de Psicopompo." width="1760" height="990" loading="lazy" />
         <figcaption><span data-lang="es">Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</span><span data-lang="en">Official material from the <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">OpenAI Build Week presentation</a>.</span></figcaption>
       </figure>
     </div>
@@ -506,7 +499,7 @@
         <div class="stat"><b>18/18</b><span><span data-lang="es">transiciones de estado verificadas</span><span data-lang="en">state transitions verified</span></span></div>
       </div>
       <figure class="gallery-plate reveal">
-        <img src="/assets/devpost/05-build-week-evidence.jpg" alt="Evidencia de Build Week: tests, benchmarks y manifiestos versionados." loading="lazy" />
+        <img src="/assets/devpost/05-build-week-evidence.jpg" alt="Evidencia de Build Week: tests, benchmarks y manifiestos versionados." width="1760" height="990" loading="lazy" />
         <figcaption><span data-lang="es">Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</span><span data-lang="en">Official material from the <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">OpenAI Build Week presentation</a>.</span></figcaption>
       </figure>
     </div>
@@ -534,7 +527,7 @@
         <li><span class="no">8</span><div><span data-lang="es"><strong>Cierre</strong> — un índice RAG local busca en dieciséis fuentes y Psicopompo produce el informe y el espejo.</span><span data-lang="en"><strong>Closure</strong> — a local RAG index searches sixteen sources and Psicopompo produces the report and the mirror.</span></div></li>
       </ol>
       <figure class="gallery-plate reveal">
-        <img src="/assets/devpost/01-live-journey.jpg" alt="El viaje en vivo: facilitador y participante recorriendo las fases del protocolo." loading="lazy" />
+        <img src="/assets/devpost/01-live-journey.jpg" alt="El viaje en vivo: facilitador y participante recorriendo las fases del protocolo." width="1760" height="990" loading="lazy" />
         <figcaption><span data-lang="es">Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</span><span data-lang="en">Official material from the <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">OpenAI Build Week presentation</a>.</span></figcaption>
       </figure>
     </div>
@@ -569,7 +562,7 @@
         reading. It always needs human review.</span>
       </p>
       <figure class="gallery-plate reveal">
-        <img src="/assets/devpost/03-myth-expansion.jpg" alt="Expansión mítica: del transcript de sesión al informe y al espejo simbólico." loading="lazy" />
+        <img src="/assets/devpost/03-myth-expansion.jpg" alt="Expansión mítica: del transcript de sesión al informe y al espejo simbólico." width="1760" height="990" loading="lazy" />
         <figcaption><span data-lang="es">Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</span><span data-lang="en">Official material from the <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">OpenAI Build Week presentation</a>.</span></figcaption>
       </figure>
     </div>
@@ -579,7 +572,7 @@
   <section class="tech-section">
     <div class="wrap">
       <span class="eyebrow reveal"><span data-lang="es">Horizonte</span><span data-lang="en">Horizon</span></span>
-      <h2 class="reveal">Voice-first, eyes closed</h2>
+      <h2 class="reveal"><span data-lang="es">Con voz, a ojos cerrados</span><span data-lang="en">Voice-first, eyes closed</span></h2>
       <p class="desc reveal">
         <span data-lang="es">La interfaz de texto actual es una beta instrumentada: expone estados, decisiones y
         transiciones para que el facilitador pueda auditar cada paso.</span>
@@ -601,9 +594,26 @@
         horizon that explains today's architecture decisions.</span>
       </p>
       <figure class="gallery-plate reveal">
-        <img src="/assets/devpost/06-product-horizon.jpg" alt="Horizonte de producto: un viaje guiado por voz, sonido y presencia humana." loading="lazy" />
+        <img src="/assets/devpost/06-product-horizon.jpg" alt="Horizonte de producto: un viaje guiado por voz, sonido y presencia humana." width="1760" height="990" loading="lazy" />
         <figcaption><span data-lang="es">Material oficial de la <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">presentación en OpenAI Build Week</a>.</span><span data-lang="en">Official material from the <a href="https://devpost.com/software/psicopompo" target="_blank" rel="noopener">OpenAI Build Week presentation</a>.</span></figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- Privacidad y datos -->
+  <section class="tech-section alt">
+    <div class="wrap">
+      <span class="eyebrow reveal"><span data-lang="es">Privacidad</span><span data-lang="en">Privacy</span></span>
+      <h2 class="reveal"><span data-lang="es">Qué pasa con lo que se dice en la sesión</span><span data-lang="en">What happens to what's said in the session</span></h2>
+      <ul class="feature-list reveal">
+        <li><span data-lang="es"><strong>Efímera por defecto:</strong> la sesión vive en memoria y solo se guarda cuando el facilitador la exporta explícitamente.</span><span data-lang="en"><strong>Ephemeral by default:</strong> the session lives in memory and is only saved when the facilitator explicitly exports it.</span></li>
+        <li><span data-lang="es"><strong>No entrena con tus sesiones:</strong> el contenido de una sesión no se incorpora automáticamente a ningún entrenamiento futuro.</span><span data-lang="en"><strong>Doesn't train on your sessions:</strong> session content is never automatically incorporated into future training.</span></li>
+        <li><span data-lang="es"><strong>El canal humano queda afuera:</strong> los mensajes directos del facilitador se registran y exportan literalmente, pero nunca llegan a Gemma, Groq, ni a la expansión mítica.</span><span data-lang="en"><strong>The human channel stays out:</strong> the facilitator's direct messages are logged and exported literally, but never reach Gemma, Groq, or myth expansion.</span></li>
+      </ul>
+      <p class="note reveal">
+        <span data-lang="es">Esto describe cómo funciona el sistema hoy, según la documentación del proyecto — no reemplaza una política de privacidad formal, que todavía no existe como documento público.</span>
+        <span data-lang="en">This describes how the system works today, per the project's documentation — it doesn't replace a formal privacy policy, which doesn't yet exist as a public document.</span>
+      </p>
     </div>
   </section>
 
@@ -648,11 +658,11 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <img class="footer-logo" src="/assets/logo-psicopompo-hueso.png" alt="Psicopompo" />
+    <img class="footer-logo" src="/assets/logo-psicopompo-hueso.png" alt="" width="1532" height="688" />
     <p>Psicopompo — <span data-lang="es">parte del ecosistema AlterMundi · HIT · Phideus · Harmonic Beacon.</span><span data-lang="en">part of the AlterMundi · HIT · Phideus · Harmonic Beacon ecosystem.</span></p>
   </div>
 </footer>
 
-<script src="/assets/main.js?v=3" defer></script>
+<script src="/assets/main.js?v=4" defer></script>
 </body>
 </html>

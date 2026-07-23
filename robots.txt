@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://psicopompo.harmonicbeacon.com/sitemap.xml
