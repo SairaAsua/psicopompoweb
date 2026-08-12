@@ -1,8 +1,8 @@
-# Psicopompo — landing web
+# PsicopoMPo — landing web
 
-Landing page de Psicopompo (copiloto/espacio de trabajo con IA para la Proyección Armónica del
-Mito, ecosistema AlterMundi / Harmonic Beacon). Sitio estático (HTML + CSS + JS plano, sin build
-step), bilingüe ES/EN, pensado para facilitadores y participantes.
+Landing de PsicopoMPo, la inteligencia operativa de la Proyección Armónica del Mito. Presenta la
+experiencia oral y las seis capas estables que enlazan la Proyección del Mito Personal con el campo
+armónico del Beacon. Sitio estático bilingüe ES/EN, pensado para facilitadores y participantes.
 
 **En vivo:** https://psicopompo.harmonicbeacon.com — deploy vía GitHub Pages + GitHub Actions
 (`.github/workflows/pages.yml`), redeploya solo en cada push a `main`.
@@ -32,9 +32,10 @@ de los dos sirve bien `/tecnologia/` o el video (ver nota abajo).
 ## Estructura
 
 - `index.html` — landing page, narrativa del viaje en 5 capítulos.
-- `tecnologia/index.html` — página propia con la arquitectura, el dataset de entrenamiento, el
-  stack, la evidencia (galería oficial de Devpost) y los límites. Se accede desde `/tecnologia/`.
-- `assets/styles.css` — sistema de marca propio de Psicopompo (paleta Hueso Lunar / Tinta Umbral /
+- `tecnologia/index.html` — arquitectura durable del producto: método, campo armónico,
+  inteligencia especializada, voz, memoria y espejo simbólico. La evidencia de la beta de julio
+  de 2026 queda fechada y separada de la voz principal del producto.
+- `assets/styles.css` — sistema de marca propio de PsicopoMPo (paleta Hueso Lunar / Tinta Umbral /
   Verdín / Cobre Vivo / Oro Antiguo, tipografía Fraunces + Manrope). Estética nocturna con texturas
   generadas. Compartido entre las dos páginas — **no dupliques `.btn`/`.btn-primary`/`.btn-ghost`
   en el `<style>` inline de una página nueva**, ya rompió la consistencia de color una vez.
@@ -71,16 +72,12 @@ Si agregás una página nueva, replicá ambos patrones — si solo agregás `dat
 olvidás del `<head>`, el toggle de idioma cambia el contenido pero no el `<title>` ni las meta
 tags (bug ya corregido una vez, no lo repitas).
 
-## Pendiente
+## Criterio editorial
 
-- **El email de contacto (`hola@altermundi.net`)** en el CTA de participantes es un placeholder —
-  confirmar el real con Mariano. El CTA de facilitadores usa WhatsApp (`wa.me/543547469632`).
-- **Discrepancia de cifras sin resolver:** el texto dice "257 tests automatizados" (del README del
-  repo `Mar-IA-no/PMP-GPT`), pero el mapa de evidencia visual que armó Mariano
-  (`assets/devpost/05-build-week-evidence.jpg`) dice "264". No cambiar sin confirmar cuál es el
-  vigente.
-- **Privacidad/manejo de datos:** el sitio afirma que la sesión se exporta solo cuando el
-  facilitador lo pide, pero no hay una página formal de privacidad — alguien evaluando adoptar la
-  herramienta probablemente la busque.
-- Repo `psicopompo-branding` es solo ES (sin toggle de idioma) — aceptable como pieza standalone,
-  pero queda inconsistente si se lo linkea desde una página en inglés.
+- La web presenta el producto y su experiencia; las versiones, proveedores, adapters, métricas y
+  decisiones del prototipo viven en evidencia técnica fechada.
+- PMP conserva su origen propio. Harmonic Myth Projection es la conjunción de PMP y Beacon;
+  PsicopoMPo articula protocolo, voz y memoria dentro de esa experiencia.
+- El contacto público es `info@altermundi.net`.
+- Falta una política formal de privacidad propia de PsicopoMPo; hasta publicarla, la página expresa
+  únicamente compromisos de diseño respaldados por la documentación del proyecto.

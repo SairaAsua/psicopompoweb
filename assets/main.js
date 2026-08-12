@@ -2,6 +2,8 @@
   var LANG_KEY = "psicopompo-lang";
   var langOpts = document.querySelectorAll(".lang-switch-opt");
   var i18nMeta = document.querySelectorAll("[data-es][data-en]");
+  var i18nAlt = document.querySelectorAll("[data-alt-es][data-alt-en]");
+  var i18nAria = document.querySelectorAll("[data-aria-es][data-aria-en]");
 
   function setLang(lang) {
     document.documentElement.setAttribute("data-active-lang", lang);
@@ -14,6 +16,14 @@
       if (val == null) return;
       if (el.tagName === "META") el.setAttribute("content", val);
       else el.textContent = val;
+    });
+    i18nAlt.forEach(function (el) {
+      var val = el.getAttribute(lang === "en" ? "data-alt-en" : "data-alt-es");
+      if (val != null) el.setAttribute("alt", val);
+    });
+    i18nAria.forEach(function (el) {
+      var val = el.getAttribute(lang === "en" ? "data-aria-en" : "data-aria-es");
+      if (val != null) el.setAttribute("aria-label", val);
     });
     var ogLocale = document.querySelector('meta[property="og:locale"]');
     if (ogLocale) ogLocale.setAttribute("content", lang === "en" ? "en_US" : "es_AR");
