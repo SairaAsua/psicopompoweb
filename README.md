@@ -84,3 +84,24 @@ tags (bug ya corregido una vez, no lo repitas).
   herramienta probablemente la busque.
 - Repo `psicopompo-branding` es solo ES (sin toggle de idioma) — aceptable como pieza standalone,
   pero queda inconsistente si se lo linkea desde una página en inglés.
+
+
+## QR registration entry
+
+`/anotate/` is the short QR-facing entry. `/anotate/conocer/` is its separate
+method, AI and research explanation tab. Both reuse the original shared brand
+stylesheet, artwork and motion/language behavior. Page layout is scoped in
+`anotate/portal.css`; the original button color rules are not duplicated.
+The exact brand font faces are locally served with their OFL notices.
+
+The primary CTA navigates in the same tab to the existing
+`https://psicopompo.altermundi.net/invitaciones` application. That application
+owns its name/email collection, contact terms, explicit acceptance and receipt.
+The marketing site has no form backend and records no contact data.
+The invitation app's framing and cross-origin protections remain intact.
+New QR material should point to `https://psicopompo.harmonicbeacon.com/anotate/`.
+Previously printed codes keep their original destination.
+
+For local checks use a range-capable static server without SPA fallback, e.g.
+`npx serve . -l tcp://127.0.0.1:8773`; do not use the legacy `dev` script for
+video/route qualification. The event banner keeps explicit13–14November2026 dates.

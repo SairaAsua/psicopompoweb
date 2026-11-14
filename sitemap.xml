@@ -10,4 +10,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://psicopompo.harmonicbeacon.com/anotate/</loc>
+  </url>
+  <url>
+    <loc>https://psicopompo.harmonicbeacon.com/anotate/conocer/</loc>
+  </url>
 </urlset>
