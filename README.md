@@ -105,3 +105,9 @@ Previously printed codes keep their original destination.
 For local checks use a range-capable static server without SPA fallback, e.g.
 `npx serve . -l tcp://127.0.0.1:8773`; do not use the legacy `dev` script for
 video/route qualification. The event banner keeps explicit13–14November2026 dates.
+
+The research section at `/anotate/conocer/#investigacion` summarizes participant
+follow-up accounts and weekly integration facilitated by a psychodramatist.
+Keep these accounts distinct from clinical efficacy claims and from the separate
+public journey gallery. Participant records and the private research dashboard
+must stay outside this public repository.
