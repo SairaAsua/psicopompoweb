@@ -111,3 +111,9 @@ follow-up accounts and weekly integration facilitated by a psychodramatist.
 Keep these accounts distinct from clinical efficacy claims and from the separate
 public journey gallery. Participant records and the private research dashboard
 must stay outside this public repository.
+
+The six illustrated steps in the experience section follow the supplied
+`PsicopoMPo_cartel_experiencia_v10_gouache.pdf`. The six `experiencia-*.webp`
+assets are document-render extracts of its original gouache illustrations.
+The steps remain selectable bilingual HTML, including the body sculpture and
+question before the inner journey, return and human psychodramatic continuity.
